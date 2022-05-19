@@ -11,3 +11,4 @@ photon-green: styles/photon_green.scss
 photon-purple: styles/photon_purple.scss
 cute: styles/cute.scss
 droid: styles/droid.scss
+modern: styles/modern.scss

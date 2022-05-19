@@ -1622,6 +1622,7 @@ en:
     photon-light: Photon Light
     cute: Cute
     droid: Droid
+    modern: Modern
   time:
     formats:
       default: "%b %d, %Y, %H:%M"
