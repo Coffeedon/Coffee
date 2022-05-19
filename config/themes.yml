@@ -1,6 +1,8 @@
 default: styles/application.scss
 contrast: styles/contrast.scss
 mastodon-light: styles/mastodon-light.scss
+modern-dark: styles/modern-dark.scss
+modern-light: styles/modern-light.scss
 coffee-dark: styles/coffee-dark.scss
 coffee-light: styles/coffee-light.scss
 dark-red: styles/dark-red.scss
@@ -11,4 +13,3 @@ photon-green: styles/photon_green.scss
 photon-purple: styles/photon_purple.scss
 cute: styles/cute.scss
 droid: styles/droid.scss
-modern: styles/modern.scss

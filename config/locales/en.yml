@@ -1609,6 +1609,8 @@ en:
       <p>Originally adapted from the <a href="https://github.com/discourse/discourse">Discourse privacy policy</a>.</p>
     title: "%{instance} Terms of Service and Privacy Policy"
   themes:
+    modern-light: Modern Light
+    modern-dark: Modern Dark
     contrast: Mastodon (High contrast)
     default: Mastodon (Dark)
     mastodon-light: Mastodon (Light)
@@ -1622,7 +1624,6 @@ en:
     photon-light: Photon Light
     cute: Cute
     droid: Droid
-    modern: Modern
   time:
     formats:
       default: "%b %d, %Y, %H:%M"
