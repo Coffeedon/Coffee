@@ -1,3 +1,13 @@
 default: styles/application.scss
 contrast: styles/contrast.scss
 mastodon-light: styles/mastodon-light.scss
+coffee-dark: styles/coffee-dark.scss
+coffee-light: styles/coffee-light.scss
+dark-red: styles/dark-red.scss
+light-red: styles/light-red.scss
+photon-light: styles/photon_light.scss
+photon-dark: styles/photon_dark.scss
+photon-green: styles/photon_green.scss
+photon-purple: styles/photon_purple.scss
+cute: styles/cute.scss
+droid: styles/droid.scss

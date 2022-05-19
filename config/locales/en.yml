@@ -1612,6 +1612,16 @@ en:
     contrast: Mastodon (High contrast)
     default: Mastodon (Dark)
     mastodon-light: Mastodon (Light)
+    coffee-dark: Coffee Dark
+    coffee-light: Coffee Light
+    dark-red: Mastodon Red Dark
+    light-red: Mastodon Red Light
+    photon-dark: Photon Dark
+    photon-green: Photon Dark Green
+    photon-purple: Photon Dark Purple
+    photon-light: Photon Light
+    cute: Cute
+    droid: Droid
   time:
     formats:
       default: "%b %d, %Y, %H:%M"
