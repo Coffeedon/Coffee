@@ -237,6 +237,10 @@
 .public-layout .account-timeline__header .account__header {
   overflow: visible !important;
 }
+#mastodon .account-timeline__header .account__header__info,
+.public-layout .account-timeline__header .account__header__info {
+  z-index: 2;
+}
 #mastodon .account-timeline__header .account__header__image,
 .public-layout .account-timeline__header .account__header__image {
   height: 0;
@@ -739,55 +743,51 @@
     content: unset !important;
   }
 }
-#mastodon .columns-area,
-.public-layout .columns-area {
-  overflow: hidden !important;
+.layout-multiple-columns #mastodon .columns-area {
+  overflow: auto hidden !important;
 }
-#mastodon .columns-area .column-header,
-.public-layout .columns-area .column-header,
-#mastodon .columns-area .scrollable,
-.public-layout .columns-area .scrollable {
+.layout-multiple-columns #mastodon .columns-area .column-header,
+.layout-multiple-columns #mastodon .columns-area .scrollable,
+.layout-multiple-columns #mastodon .columns-area .column-back-button,
+.layout-multiple-columns #mastodon .columns-area .account__header__image {
   border-radius: 0 !important;
 }
-#mastodon .columns-area .icon-button:after,
-.public-layout .columns-area .icon-button:after {
+.layout-multiple-columns #mastodon .columns-area .icon-button:after {
   content: unset !important;
 }
-#mastodon .columns-area > div,
-.public-layout .columns-area > div {
+.layout-multiple-columns #mastodon .columns-area > div {
   border: 0 !important;
   padding: 0 !important;
 }
-#mastodon .columns-area > div:not(:last-child):not(.drawer),
-.public-layout .columns-area > div:not(:last-child):not(.drawer) {
+.layout-multiple-columns #mastodon .columns-area > div:not(:last-child):not(.drawer) {
   padding-right: 2px !important;
 }
-#mastodon .columns-area > div.column,
-.public-layout .columns-area > div.column {
+.layout-multiple-columns #mastodon .columns-area > div.column {
   flex-grow: 1;
-  max-width: var(--tl-width);
+  max-width: 600px;
 }
-#mastodon .columns-area .drawer,
-.public-layout .columns-area .drawer {
+.layout-multiple-columns #mastodon .columns-area > div:first-child {
+  margin-left: auto !important;
+}
+.layout-multiple-columns #mastodon .columns-area > div:last-child {
+  margin-right: auto !important;
+}
+.layout-multiple-columns #mastodon .columns-area .drawer {
   padding-inline: 10px !important;
   padding-top: 20px !important;
 }
-#mastodon .columns-area .drawer .drawer__header,
-.public-layout .columns-area .drawer .drawer__header {
+.layout-multiple-columns #mastodon .columns-area .drawer .drawer__header {
   border-radius: var(--radius-round);
   margin-inline: 5px;
   overflow: hidden;
   border: 0 !important;
 }
-#mastodon .columns-area .drawer__inner:not(.darker),
-.public-layout .columns-area .drawer__inner:not(.darker),
-#mastodon .columns-area .drawer__inner__mastodon,
-.public-layout .columns-area .drawer__inner__mastodon {
+.layout-multiple-columns #mastodon .columns-area .drawer__inner:not(.darker),
+.layout-multiple-columns #mastodon .columns-area .drawer__inner__mastodon {
   background-color: transparent;
   border: 0 !important;
 }
-#mastodon .columns-area .drawer__inner.darker,
-.public-layout .columns-area .drawer__inner.darker {
+.layout-multiple-columns #mastodon .columns-area .drawer__inner.darker {
   border-radius: var(--radius) var(--radius) 0 0;
   margin-inline: 5px;
   width: calc(100% - 10px);
