@@ -425,7 +425,7 @@
 .public-layout .focusable:hover,
 #mastodon .entry:hover,
 .public-layout .entry:hover {
-  box-shadow: var(--shadow);
+  background-color: var(--hover-color);
 }
 #mastodon .detailed-status__wrapper,
 .public-layout .detailed-status__wrapper,
@@ -442,7 +442,11 @@
 #mastodon .detailed-status__wrapper .media-gallery,
 .public-layout .detailed-status__wrapper .media-gallery,
 #mastodon .detailed-status .media-gallery,
-.public-layout .detailed-status .media-gallery {
+.public-layout .detailed-status .media-gallery,
+#mastodon .detailed-status__wrapper .video-player,
+.public-layout .detailed-status__wrapper .video-player,
+#mastodon .detailed-status .video-player,
+.public-layout .detailed-status .video-player {
   margin-left: 0 !important;
 }
 #mastodon :not(.detailed-status__wrapper) .status__info,
@@ -734,6 +738,20 @@
   .public-layout .icon-button:after {
     content: unset !important;
   }
+}
+#mastodon .columns-area,
+.public-layout .columns-area {
+  overflow: hidden !important;
+}
+#mastodon .columns-area .column-header,
+.public-layout .columns-area .column-header,
+#mastodon .columns-area .scrollable,
+.public-layout .columns-area .scrollable {
+  border-radius: 0 !important;
+}
+#mastodon .columns-area .icon-button:after,
+.public-layout .columns-area .icon-button:after {
+  content: unset !important;
 }
 #mastodon .columns-area > div,
 .public-layout .columns-area > div {
