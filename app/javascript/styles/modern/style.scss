@@ -852,7 +852,7 @@
   }
   #mastodon .status__action-bar .icon-button,
   .public-layout .status__action-bar .icon-button {
-    flex-grow: 1;
+    flex-grow: 1 !important;
     margin: 0 !important;
     justify-content: center;
     padding: 0.7em !important;
