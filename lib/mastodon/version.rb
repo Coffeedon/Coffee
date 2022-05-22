@@ -33,7 +33,7 @@ module Mastodon
     end
 
     def repository
-      ENV.fetch('GITHUB_REPOSITORY', 'mstdn/coffee')
+      ENV.fetch('GITHUB_REPOSITORY', 'coffeedon/coffee')
     end
 
     def source_base_url
