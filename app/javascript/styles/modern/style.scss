@@ -307,6 +307,14 @@
 .public-layout .account-timeline__header .account__header__tabs__name h1 span {
   margin-right: 0.4em;
 }
+#mastodon .account-timeline__header .account-role,
+.public-layout .account-timeline__header .account-role {
+  margin-right: 0.4em;
+}
+#mastodon .account-timeline__header .account-role > span,
+.public-layout .account-timeline__header .account-role > span {
+  margin: 0 !important;
+}
 #mastodon .account-timeline__header .account__header__bio,
 .public-layout .account-timeline__header .account__header__bio {
   margin: 0;
@@ -509,8 +517,8 @@
   margin-inline: -100px;
   padding-inline: 100px;
 }
-#mastodon .status__content p,
-.public-layout .status__content p {
+#mastodon .status__content.status__content--with-spoiler > p:first-child,
+.public-layout .status__content.status__content--with-spoiler > p:first-child {
   margin-bottom: 0;
 }
 #mastodon .status__content__spoiler-link,
