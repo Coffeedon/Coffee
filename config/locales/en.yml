@@ -1611,6 +1611,7 @@ en:
   themes:
     modern-light: Modern Light
     modern-dark: Modern Dark
+    modern-contrast: Modern Contrast
     contrast: Mastodon (High contrast)
     default: Mastodon (Dark)
     mastodon-light: Mastodon (Light)
