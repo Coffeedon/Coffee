@@ -1388,29 +1388,6 @@
     padding: 7px;
     border-radius: 0 !important;
   }
-  #mastodon .modal-root__container,
-  .public-layout .modal-root__container {
-    overflow-y: auto !important;
-    display: unset;
-    animation: unset;
-  }
-  #mastodon .modal-root__container > .actions-modal,
-  .public-layout .modal-root__container > .actions-modal {
-    width: unset;
-    margin: 20px;
-    margin-bottom: 40px;
-    margin-top: calc(100vh - 340px);
-    min-height: max-content;
-    max-height: unset !important;
-    border-radius: var(--radius);
-    max-width: unset;
-  }
-  #mastodon .modal-root__container > .actions-modal ul,
-  .public-layout .modal-root__container > .actions-modal ul {
-    max-height: unset !important;
-    min-height: max-content !important;
-    overflow: visible !important;
-  }
   .search-popout {
     max-width: unset !important;
     width: calc(100vw - 70px) !important;
