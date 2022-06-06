@@ -1107,23 +1107,23 @@
   font-size: 1.1em !important;
   line-height: 2;
 }
-#mastodon.public-layout .container:nth-child(2) .grid .column-1,
-.public-layout.public-layout .container:nth-child(2) .grid .column-1 {
+#mastodon.public-layout .container:nth-child(2) > .grid .column-1,
+.public-layout.public-layout .container:nth-child(2) > .grid .column-1 {
   position: sticky;
   align-self: flex-end;
   bottom: 0;
   min-height: calc(100vh - 80px);
 }
-#mastodon.public-layout .container:nth-child(2) .grid .column-1 > *,
-.public-layout.public-layout .container:nth-child(2) .grid .column-1 > * {
+#mastodon.public-layout .container:nth-child(2) > .grid .column-1 > *,
+.public-layout.public-layout .container:nth-child(2) > .grid .column-1 > * {
   border-radius: var(--radius);
   overflow: hidden;
   border: 0 !important;
 }
-#mastodon.public-layout .container:nth-child(2) .grid .column-1 a,
-.public-layout.public-layout .container:nth-child(2) .grid .column-1 a,
-#mastodon.public-layout .container:nth-child(2) .grid .column-1 .hero-widget__text,
-.public-layout.public-layout .container:nth-child(2) .grid .column-1 .hero-widget__text {
+#mastodon.public-layout .container:nth-child(2) > .grid .column-1 a,
+.public-layout.public-layout .container:nth-child(2) > .grid .column-1 a,
+#mastodon.public-layout .container:nth-child(2) > .grid .column-1 .hero-widget__text,
+.public-layout.public-layout .container:nth-child(2) > .grid .column-1 .hero-widget__text {
   border: 0 !important;
 }
 @media (min-width: 416px) {
