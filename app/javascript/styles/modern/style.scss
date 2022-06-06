@@ -1165,7 +1165,7 @@
   .public-layout.public-layout .table-of-contents {
     max-height: calc(100vh - 20px);
     min-height: unset !important;
-    overflow-y: scroll;
+    overflow-y: scroll !important;
     display: flex;
     flex-direction: column;
     position: sticky;
