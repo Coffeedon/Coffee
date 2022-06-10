@@ -1629,14 +1629,12 @@ en:
       <p>Originally adapted from the <a href="https://github.com/discourse/discourse">Discourse privacy policy</a>.</p>
     title: "%{instance} Terms of Service and Privacy Policy"
   themes:
-    modern-light: Modern Light
-    modern-dark: Modern Dark
-    modern-contrast: Modern Contrast
+    modern-light: Coffee Light
+    modern-dark: Coffee Dark
+    modern-contrast: Coffee Dark Roasted (Contrast)
     contrast: Mastodon (High contrast)
     default: Mastodon (Dark)
     mastodon-light: Mastodon (Light)
-    coffee-dark: Coffee Dark
-    coffee-light: Coffee Light
     dark-red: Mastodon Red Dark
     light-red: Mastodon Red Light
     photon-dark: Photon Dark
