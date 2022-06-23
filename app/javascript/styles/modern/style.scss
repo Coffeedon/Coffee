@@ -7,6 +7,7 @@
   --shadow: 0 10px 40px -10px rgba(0,0,0,0.15);
   --shadow-low: 0 8px 16px -10px rgba(0,0,0,0.4);
   --shadow-med: 0 8px 60px -30px rgba(0,0,0,0.1);
+  --status-left-padding: 75px;
 }
 .rtl textarea,
 .rtl p {
@@ -594,7 +595,7 @@
 .public-layout .status {
   overflow: visible !important;
   padding: 15px !important;
-  padding-inline-start: 78px !important;
+  padding-inline-start: var(--status-left-padding) !important;
 }
 #mastodon .status__prepend,
 .public-layout .status__prepend,
@@ -602,7 +603,7 @@
 .public-layout .notification__message {
   padding-top: 15px !important;
   padding-bottom: 0 !important;
-  margin-inline-start: 78px;
+  margin-inline-start: var(--status-left-padding);
   margin-bottom: -10px !important;
   z-index: 2;
 }
@@ -680,7 +681,7 @@
 .public-layout .status-card,
 #mastodon .audio-player,
 .public-layout .audio-player {
-  margin-inline-start: -63px;
+  margin-inline-start: calc(15px - var(--status-left-padding));
   width: unset !important;
   box-shadow: var(--shadow-low);
   border-radius: var(--radius);
@@ -1443,6 +1444,9 @@
   text-align: right;
 }
 @media (max-width: 895px) {
+  :root {
+    --status-left-padding: 70px;
+  }
   #mastodon .columns-area--mobile > .column,
   .public-layout .columns-area--mobile > .column {
     overflow: hidden !important;
@@ -1460,21 +1464,21 @@
     padding: 0 !important;
     max-width: unset;
   }
-  #mastodon .columns-area__panels__main .scrollable,
-  .public-layout .columns-area__panels__main .scrollable {
+  #mastodon .columns-area__panels__main .scrollable:not(.scrollable--flex),
+  .public-layout .columns-area__panels__main .scrollable:not(.scrollable--flex) {
     padding: 5px !important;
     padding-bottom: 40vh !important;
   }
-  #mastodon .columns-area__panels__main .scrollable::before,
-  .public-layout .columns-area__panels__main .scrollable::before {
+  #mastodon .columns-area__panels__main .scrollable:not(.scrollable--flex)::before,
+  .public-layout .columns-area__panels__main .scrollable:not(.scrollable--flex)::before {
     content: "";
     position: absolute;
     inset: 0;
     background-color: inherit;
     z-index: -1;
   }
-  #mastodon .columns-area__panels__main .scrollable .account-timeline__header,
-  .public-layout .columns-area__panels__main .scrollable .account-timeline__header {
+  #mastodon .columns-area__panels__main .scrollable:not(.scrollable--flex) .account-timeline__header,
+  .public-layout .columns-area__panels__main .scrollable:not(.scrollable--flex) .account-timeline__header {
     margin: -5px !important;
   }
   #mastodon .is-composing .columns-area__panels__main,
@@ -1626,14 +1630,31 @@
   .public-layout .tabs-bar__wrapper #tabs-bar__portal > button {
     padding-inline: 20px;
   }
-  #mastodon .tabs-bar__wrapper #tabs-bar__portal button,
-  .public-layout .tabs-bar__wrapper #tabs-bar__portal button {
-    min-width: 60px;
-  }
   #mastodon .tabs-bar__wrapper #tabs-bar__portal .column-header > button,
   .public-layout .tabs-bar__wrapper #tabs-bar__portal .column-header > button {
     padding-inline-start: 15px;
     transform-origin: center !important;
+  }
+  #mastodon .tabs-bar__wrapper #tabs-bar__portal .column-header__buttons > button,
+  .public-layout .tabs-bar__wrapper #tabs-bar__portal .column-header__buttons > button {
+    padding-inline: 10px;
+    transition: padding 0.2s, margin 0.2s;
+  }
+  #mastodon .tabs-bar__wrapper #tabs-bar__portal .column-header__buttons > button:first-child,
+  .public-layout .tabs-bar__wrapper #tabs-bar__portal .column-header__buttons > button:first-child {
+    padding-inline-start: 20px;
+  }
+  #mastodon .tabs-bar__wrapper #tabs-bar__portal .column-header__buttons > button:first-child.active,
+  .public-layout .tabs-bar__wrapper #tabs-bar__portal .column-header__buttons > button:first-child.active {
+    margin-inline-start: 20px;
+  }
+  #mastodon .tabs-bar__wrapper #tabs-bar__portal .column-header__buttons > button:last-child,
+  .public-layout .tabs-bar__wrapper #tabs-bar__portal .column-header__buttons > button:last-child {
+    padding-inline-end: 20px;
+  }
+  #mastodon .tabs-bar__wrapper #tabs-bar__portal .column-header__buttons > button.active,
+  .public-layout .tabs-bar__wrapper #tabs-bar__portal .column-header__buttons > button.active {
+    padding-inline: 15px;
   }
   #mastodon .tabs-bar__wrapper #tabs-bar__portal .column-header,
   .public-layout .tabs-bar__wrapper #tabs-bar__portal .column-header {
