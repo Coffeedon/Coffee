@@ -3472,7 +3472,7 @@
   #mastodon .status__action-bar,
   .public-layout .status__action-bar,
   .modal-layout .status__action-bar {
-    margin-inline-start: -63px;
+    margin-inline-start: calc(0px - var(--status-left-padding) + 15px);
     margin-bottom: -10px;
   }
   #mastodon .status__action-bar .icon-button,
