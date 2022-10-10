@@ -5,28 +5,23 @@ class AboutController < ApplicationController
 
   layout 'public'
 
-  before_action :require_open_federation!, only: [:show, :more]
+  before_action :require_open_federation!, only: [:more]
   before_action :set_body_classes, only: :show
   before_action :set_instance_presenter
-  before_action :set_expires_in, only: [:more, :terms]
-  before_action :set_registration_form_time, only: :show
+  before_action :set_expires_in, only: [:more]
 
-  skip_before_action :require_functional!, only: [:more, :terms]
-
-  def show; end
+  skip_before_action :require_functional!, only: [:more]
 
   def more
     flash.now[:notice] = I18n.t('about.instance_actor_flash') if params[:instance_actor]
 
-    toc_generator = TOCGenerator.new(@instance_presenter.site_extended_description)
+    toc_generator = TOCGenerator.new(@instance_presenter.extended_description)
 
     @rules             = Rule.ordered
     @contents          = toc_generator.html
     @table_of_contents = toc_generator.toc
     @blocks            = DomainBlock.with_user_facing_limitations.by_severity if display_blocks?
   end
-
-  def terms; end
 
   helper_method :display_blocks?
   helper_method :display_blocks_rationale?

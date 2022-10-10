@@ -8,7 +8,7 @@ class TagsController < ApplicationController
 
   layout 'public'
 
-  before_action :require_signature!, if: -> { request.format == :json && authorized_fetch_mode? }
+  before_action :require_account_signature!, if: -> { request.format == :json && authorized_fetch_mode? }
   before_action :authenticate_user!, if: :whitelist_mode?
   before_action :set_local
   before_action :set_tag
@@ -21,7 +21,7 @@ class TagsController < ApplicationController
   def show
     respond_to do |format|
       format.html do
-        expires_in 0, public: true
+        redirect_to web_path("tags/#{@tag.name}")
       end
 
       format.rss do

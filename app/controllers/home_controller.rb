@@ -1,33 +1,24 @@
 # frozen_string_literal: true
 
 class HomeController < ApplicationController
-  before_action :redirect_unauthenticated_to_permalinks!
-  before_action :authenticate_user!
-  before_action :set_referrer_policy_header
+  include WebAppControllerConcern
 
-  def index
-    @body_classes = 'app-body'
-  end
+  before_action :redirect_unauthenticated_to_permalinks!
+  before_action :set_instance_presenter
+
+  def index; end
 
   private
 
   def redirect_unauthenticated_to_permalinks!
     return if user_signed_in?
 
-    redirect_to(PermalinkRedirector.new(request.path).redirect_path || default_redirect_path)
+    redirect_path = PermalinkRedirector.new(request.path).redirect_path
+
+    redirect_to(redirect_path) if redirect_path.present?
   end
 
-  def default_redirect_path
-    if request.path.start_with?('/web') || whitelist_mode?
-      new_user_session_path
-    elsif single_user_mode?
-      short_account_path(Account.local.without_suspended.where('id > 0').first)
-    else
-      about_path
-    end
-  end
-
-  def set_referrer_policy_header
-    response.headers['Referrer-Policy'] = 'origin'
+  def set_instance_presenter
+    @instance_presenter = InstancePresenter.new
   end
 end

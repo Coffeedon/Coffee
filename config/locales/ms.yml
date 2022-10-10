@@ -1,40 +1,25 @@
 ---
 ms:
   about:
-    about_hashtag_html: Ini semua hantaran awam yang ditandakan dengan <strong>#%{hashtag}</strong>. Anda boleh berinteraksi dengan mereka jika anda mempunyai akaun di mana-mana dunia persekutuan.
     about_mastodon_html: 'Rangkaian sosial masa hadapan: Tiada iklan, tiada pengawasan korporat, reka bentuk beretika, dan desentralisasi! Miliki data anda dengan Mastodon!'
     about_this: Perihal
-    active_count_after: aktif
-    active_footnote: Pengguna Aktif Bulanan (MAU)
     administered_by: 'Ditadbir oleh:'
     api: API
     apps: Aplikasi mudah alih
-    apps_platforms: Guna Mastodon daripada iOS, Android dan platform yang lain
-    browse_directory: Layari direktori profil dan tapis mengikut minat
-    browse_local_posts: Layari strim langsung hantaran awam daripada pelayan ini
-    browse_public_posts: Layari strim langsung hantaran awam di Mastodon
     contact: Hubungi kami
     contact_missing: Tidak ditetapkan
     contact_unavailable: Tidak tersedia
-    discover_users: Terokai pengguna
     documentation: Pendokumenan
-    federation_hint_html: Dengan akaun di %{instance} anda akan mampu mengikuti orang di mana-mana pelayan Mastodon dan lebih lagi.
-    get_apps: Cuba aplikasi mudah alih
     hosted_on: Mastodon dihoskan di %{domain}
     instance_actor_flash: |
       Akaun ini ialah pelaku maya yang digunakan untuk mewakili pelayan itu sendiri dan bukannya mana-mana pengguna individu.
       Ia digunakan untuk tujuan persekutuan dan tidak patut disekat melainkan anda ingin menyekat keseluruhan tika, yang mana anda sepatutnya gunakan sekatan domain.
-    learn_more: Ketahui lebih lanjut
-    privacy_policy: Polisi privasi
     rules: Peraturan pelayan
     rules_html: 'Di bawah ini ringkasan peraturan yang anda perlu ikuti jika anda ingin mempunyai akaun di pelayan Mastodon yang ini:'
-    see_whats_happening: Lihat apa yang sedang berlaku
-    server_stats: 'Statistik pelayan:'
     source_code: Kod sumber
     status_count_after:
       other: hantaran
     status_count_before: Siapa terbitkan
-    terms: Terma perkhidmatan
     unavailable_content: Pelayan disederhanakan
     unavailable_content_description:
       domain: Pelayan
@@ -256,7 +241,6 @@ ms:
         create_unavailable_domain_html: "%{name} telah menghentikan penghantaran ke domain %{target}"
         demote_user_html: "%{name} telah menurunkan taraf pengguna %{target}"
         destroy_announcement_html: "%{name} telah memadamkan pengumuman %{target}"
-        destroy_custom_emoji_html: "%{name} telah memusnahkan emoji %{target}"
         destroy_domain_allow_html: "%{name} telah membuang kebenaran persekutuan dengan domain %{target}"
         destroy_domain_block_html: "%{name} telah menyahsekat domain %{target}"
         destroy_email_domain_block_html: "%{name} telah menyahsekat domain e-mel %{target}"
@@ -285,7 +269,6 @@ ms:
         update_custom_emoji_html: "%{name} telah mengemaskini emoji %{target}"
         update_domain_block_html: "%{name} telah mengemaskini penyekatan domain untuk %{target}"
         update_status_html: "%{name} telah mengemaskini hantaran oleh %{target}"
-      deleted_status: "(hantaran telah dipadam)"
       empty: Tiada log dijumpai.
       filter_by_action: Tapis mengikut tindakan
       filter_by_user: Tapis mengikut pengguna
@@ -517,9 +500,6 @@ ms:
         closed_message:
           desc_html: Dipaparkan di muka depan apabil pendaftaran ditutup. Anda boleh menggunakan penanda HTML
           title: Mesej pendaftaran telah ditutup
-        deletion:
-          desc_html: Benarkan sesiapapun memadamkan akaun mereka
-          title: Buka pemadaman akaun
         require_invite_text:
           desc_html: Apabila pendaftaran memerlukan kelulusan manual, tandakan input teks "Kenapa anda mahu menyertai?" sebagai wajib, bukan pilihan
           title: Memerlukan alasan bagi pengguna baru untuk menyertai
@@ -542,8 +522,5 @@ ms:
   exports:
     archive_takeout:
       in_progress: Mengkompil arkib anda...
-  notification_mailer:
-    digest:
-      title: Ketika anda tiada di sini...
   users:
     follow_limit_reached: Anda tidak boleh mengikut lebih daripada %{limit} orang

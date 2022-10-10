@@ -1,30 +1,22 @@
 ---
 ast:
   about:
-    about_hashtag_html: Estos son los barritos públicos etiquetaos con <strong>#%{hashtag}</strong>. Pues interactuar con ellos si tienes una cuenta en cualesquier parte del fediversu.
     about_mastodon_html: 'La rede social del futuru: ¡ensin anuncios nin vixilancia, con un diseñu éticu y descentralizáu! Controla los tos datos con Mastodon.'
     about_this: Tocante a
     administered_by: 'Alministráu por:'
     api: API
     apps: Aplicaciones pa móviles
-    apps_platforms: Usa Mastodon dende Android, iOS y otres plataformes
     contact: Contautu
     contact_missing: Nun s'afitó
     contact_unavailable: N/D
-    discover_users: Usuarios nuevos
     documentation: Documentación
-    federation_hint_html: Con una cuenta en %{instance} vas ser a siguir a persones de cualesquier sirvidor de Mastodon y facer más coses.
-    get_apps: En preseos móviles
     hosted_on: Mastodon ta agospiáu en %{domain}
-    learn_more: Saber más
     privacy_policy: Política de privacidá
-    server_stats: 'Estadístiques del sirvidor:'
     source_code: Códigu fonte
     status_count_after:
       one: artículu
       other: artículos
     status_count_before: Que crearon
-    terms: Términos del serviciu
     unavailable_content_description:
       domain: Sirvidor
       reason: Motivu
@@ -137,6 +129,9 @@ ast:
     settings:
       site_description:
         title: Descripción del sirvidor
+      site_terms:
+        desc_html: Pues escribir la to política de privacidá. Tamién pues usar etiquetes HTML
+        title: Política de privacidá personalizada
       site_title: Nome del sirvidor
       title: Axustes del sitiu
     title: Alministración
@@ -165,8 +160,6 @@ ast:
     warning: Ten munchu curiáu con estos datos, ¡enxamás nun los compartas con naide!
   auth:
     change_password: Contraseña
-    checkbox_agreement_html: Acepto les <a href="%{rules_path}" target="_blank">regles del sirvidor</a> y los <a href="%{terms_path}" target="_blank">términos del serviciu</a>
-    checkbox_agreement_without_rules_html: Acepto los <a href="%{terms_path}" target="_blank"> términos del serviciu</a>
     delete_account: Desaniciu de la cuenta
     delete_account_html: Si deseyes desaniciar la to cuenta, pues <a href="%{path}">siguir equí</a>. Va pidísete la confirmación.
     description:
@@ -182,7 +175,6 @@ ast:
       saml: SAML
     register: Rexistrase
     security: Seguranza
-    trouble_logging_in: "¿Tienes problemes col aniciu de sesión?"
   authorize_follow:
     already_following: Yá tas siguiendo a esta cuenta
     already_requested: Yá unviesti una solicitú de siguimientu a esa cuenta
@@ -210,10 +202,6 @@ ast:
     warning:
       email_contact_html: Si entá nun aportó, pues unviar un corréu a<a href="mailto:%{email}">%{email}</a> pa más ayuda
       more_details_html: Pa más detalles, mira la <a href="%{terms_path}">política de privacidá</a>.
-  directories:
-    directory: Direutoriu de perfiles
-    explanation: y descubri a usuarios según los sos intereses
-    explore_mastodon: Esplora %{title}
   disputes:
     strikes:
       appeal_rejected: Refugóse l'apellación
@@ -314,9 +302,6 @@ ast:
     warning:
       followers: Esta aición va mover tolos siguidores de la cuenta actual a la nueva
   notification_mailer:
-    digest:
-      body: Equí hai un resume de los mensaxes que nun viesti dende la última visita'l %{since}
-      mention: "%{name} mentóte en:"
     favourite:
       title: Favoritu nuevu
     follow:
@@ -345,6 +330,8 @@ ast:
       invalid_choice: La opción de votu escoyida nun esiste
   preferences:
     public_timelines: Llinies temporales públiques
+  privacy_policy:
+    title: Política de privacidá
   relationships:
     activity: Actividá
     followers: Siguidores
@@ -492,7 +479,6 @@ ast:
     welcome:
       full_handle_hint: Esto ye lo que-yos diríes a los collacios pa que puean unviate mensaxes o siguite dende otra instancia.
       subject: Afáyate en Mastodon
-      tips: Conseyos
   users:
     follow_limit_reached: Nun pues siguir a más de %{limit} persones
     invalid_otp_token: El códigu nun ye válidu

@@ -1,38 +1,21 @@
 ---
 cy:
   about:
-    about_hashtag_html: Dyma dŵtiau cyhoeddus wedi eu tagio gyda <strong>#%{hashtag}</strong>. Gallwch ryngweithio gyda nhw os oes gennych gyfrif yn unrhyw le yn y ffeddysawd.
     about_mastodon_html: Mae Mastodon yn rwydwaith cymdeithasol sy'n seiliedig ar brotocolau gwe a meddalwedd cod agored rhad ac am ddim. Yn debyg i e-bost mae'n ddatganoledig.
     about_this: Ynghylch
-    active_count_after: yn weithredol
-    active_footnote: Defnyddwyr Gweithredol Misol (DGM)
     administered_by: 'Gweinyddir gan:'
     api: API
     apps: Apiau symudol
-    apps_platforms: Defnyddio Mastodon o iOS, Android a phlatfformau eraill
-    browse_directory: Pori cyfeiriadur proffil a hidlo wrth diddordebau
-    browse_local_posts: Pori ffrwd byw o byst cyhoeddus o'r gweinydd hyn
-    browse_public_posts: Pori ffrwd byw o byst cyhoeddus ar Fastodon
     contact: Cyswllt
     contact_missing: Heb ei osod
     contact_unavailable: Ddim yn berthnasol
-    continue_to_web: Parhau i app gwe
-    discover_users: Darganfod defnyddwyr
     documentation: Dogfennaeth
-    federation_hint_html: Gyda cyfrif ar %{instance}, gallwch dilyn pobl ar unrhyw gweinydd Mastodon, a thu hwnt.
-    get_apps: Rhowch gynnig ar ap dyfeis symudol
     hosted_on: Mastodon wedi ei weinyddu ar %{domain}
     instance_actor_flash: |
       Mae'r cyfrif hwn yn actor rhithwir a ddefnyddir i gynrychioli'r gweinydd ei hun ac nid unrhyw ddefnyddiwr unigol.
       Fe'i defnyddir at ddibenion ffederasiwn ac ni ddylid ei rwystro oni bai eich bod am rwystro'r achos cyfan, ac os felly dylech ddefnyddio bloc parth.
-    learn_more: Dysgu mwy
-    logged_in_as_html: Rydych chi wedi mewngofnodi fel %{username}.
-    logout_before_registering: Rydych chi eisoes wedi mewngofnodi.
-    privacy_policy: Polisi preifatrwydd
     rules: Rheolau gweinydd
     rules_html: 'Isod mae crynodeb o''r rheolau y mae angen i chi eu dilyn os ydych chi am gael cyfrif ar y gweinydd hwn o Mastodon:'
-    see_whats_happening: Gweld beth sy'n digwydd
-    server_stats: 'Ystadegau gweinydd:'
     source_code: Cod ffynhonnell
     status_count_after:
       few: statwsau
@@ -42,7 +25,6 @@ cy:
       two: statwsau
       zero: statwsau
     status_count_before: Ysgrifennwyd gan
-    terms: Telerau gwasanaeth
     unavailable_content: Cynnwys nad yw ar gael
     unavailable_content_description:
       domain: Gweinydd
@@ -257,7 +239,6 @@ cy:
         update_status: Diweddaru Statws
       actions:
         memorialize_account_html: Newidodd %{name} gyfrif %{target} i dudalen goffa
-      deleted_status: "(statws wedi ei ddileu)"
       empty: Dim logiau ar gael.
       filter_by_action: Hidlo wrth weithred
       filter_by_user: Hidlo wrth ddefnyddiwr
@@ -478,18 +459,12 @@ cy:
         closed_message:
           desc_html: I'w arddangos ar y dudalen flaen wedi i gofrestru cau. Mae modd defnyddio tagiau HTML
           title: Neges gofrestru caeëdig
-        deletion:
-          desc_html: Caniatau i unrhywun i ddileu eu cyfrif
-          title: Agor dileu cyfrif
       registrations_mode:
         modes:
           approved: Mae angen cymeradwyaeth ar gyfer cofrestru
           none: Ni all unrhyw un cofrestru
           open: Gall unrhyw un cofrestru
         title: Modd cofrestriadau
-      show_known_fediverse_at_about_page:
-        desc_html: Wedi'i ddewis, bydd yn dangos rhagolwg o dŵtiau o'r holl ffedysawd. Fel arall bydd ond yn dangos tŵtiau lleol.
-        title: Dangos ffedysawd hysbys ar ragolwg y ffrwd
       site_description:
         desc_html: Paragraff agoriadol ar y dudalen flaen. Disgrifiwch yr hyn sy'n arbennig am y gweinydd Mastodon hwn ac unrhywbeth arall o bwys. Mae modd defnyddio tagiau HTML <code>&lt;a&gt;</code> a <code>&lt;em&gt;</code>.
         title: Disgrifiad achos
@@ -499,9 +474,6 @@ cy:
       site_short_description:
         desc_html: Yn cael ei ddangos yn bar ar yr ochr a tagiau meto. Digrifiwch beth yw Mastodon a beth sy'n gwneud y gweinydd hwn mewn un paragraff. Os yn wag, wedi ei ragosod i ddangos i disgrifiad yr achos.
         title: Disgrifiad byr o'r achos
-      site_terms:
-        desc_html: Mae modd i chi ysgrifennu polisi preifatrwydd, termau gwasanaeth a cyfreitheg arall eich hun. Mae modd defnyddio tagiau HTML
-        title: Termau gwasanaeth wedi eu haddasu
       site_title: Enw'r achos
       thumbnail:
         desc_html: Ceith ei ddefnyddio ar gyfer rhagolygon drwy OpenGraph a'r API. Argymhellir 1200x630px
@@ -510,9 +482,6 @@ cy:
         desc_html: Dangos ffrwd gyhoeddus ar y dudalen lanio
         title: Rhagolwg o'r ffrwd
       title: Gosodiadau'r wefan
-      trendable_by_default:
-        desc_html: Yn ddylanwadu ar hashnodau sydd heb ei rhwystro yn y gorffenol
-        title: Gadael hashnodau i dueddu heb adolygiad cynt
       trends:
         desc_html: Arddangos hashnodau a adolygwyd yn gynt yn gyhoeddus sydd yn tueddu yn bresennol
         title: Hashnodau tueddig
@@ -578,10 +547,7 @@ cy:
     warning: Byddwch yn ofalus a'r data hyn. Peidiwch a'i rannu byth!
     your_token: Eich tocyn mynediad
   auth:
-    apply_for_account: Gofyn am wahoddiad
     change_password: Cyfrinair
-    checkbox_agreement_html: Rydw i'n cytuno i'r <a href="%{rules_path}" target="_blank">rheolau'r gweinydd</a> a'r <a href="%{terms_path}" target="_blank">telerau gwasanaeth</a>
-    checkbox_agreement_without_rules_html: Rydw i'n cytuno i <a href="%{terms_path}" target="_blank">Delerau y Gwasanaeth</a>
     delete_account: Dileu cyfrif
     delete_account_html: Os hoffech chi ddileu eich cyfrif, mae modd <a href="%{path}">parhau yma</a>. Bydd gofyn i chi gadarnhau.
     description:
@@ -611,7 +577,6 @@ cy:
       confirming: Aros i gadarnhad e-bost gael ei gwblhau.
       pending: Mae'ch cais yn aros i gael ei adolygu gan ein staff. Gall hyn gymryd cryn amser. Byddwch yn derbyn e-bost os caiff eich cais ei gymeradwyo.
       redirecting_to: Mae eich cyfrif yn anactif oherwydd ei fod ar hyn o bryd yn ailgyfeirio i %{acct}.
-    trouble_logging_in: Trafferdd mewngofnodi?
   authorize_follow:
     already_following: Yr ydych yn dilyn y cyfrif hwn yn barod
     already_requested: Rydych barod wedi anfon ceisiad dilyn i'r cyfrif hynny
@@ -664,10 +629,6 @@ cy:
       more_details_html: Am fwy o fanylion, gwelwch y <a href="%{terms_path}">polisi preifatrwydd</a>.
       username_available: Bydd eich enw defnyddiwr ar gael eto
       username_unavailable: Ni fydd eich enw defnyddiwr ar gael
-  directories:
-    directory: Cyfeiriadur proffil
-    explanation: Darganfod defnyddwyr yn ôl eu diddordebau
-    explore_mastodon: Archwilio %{title}
   disputes:
     strikes:
       approve_appeal: Cymeradwyo'r apêl
@@ -835,18 +796,6 @@ cy:
     carry_mutes_over_text: Wnaeth y defnyddiwr symud o %{acct}, a oeddech chi wedi'i dawelu.
     copy_account_note_text: 'Wnaeth y defnyddiwr symud o %{acct}, dyma oedd eich hen nodiadau amdanynt:'
   notification_mailer:
-    digest:
-      action: Gweld holl hysbysiadau
-      body: Dyma grynodeb byr o'r holl negeseuon golloch chi ers eich ymweliad diwethaf ar %{since}
-      mention: 'Soniodd %{name} amdanoch chi:'
-      new_followers_summary:
-        few: Hefyd, rydych wedi ennill %{count} dilynwr newydd tra eich bod i ffwrdd! Hwrê!
-        many: Hefyd, rydych wedi ennill %{count} dilynwr newydd tra eich bod i ffwrdd! Hwrê!
-        one: Yr ydych wedi ennill dilynwr newydd tra eich bod i ffwrdd! Hwrê!
-        other: Hefyd, rydych wedi ennill %{count} dilynwr newydd tra eich bod i ffwrdd! Hwrê!
-        two: Hefyd, rydych wedi ennill %{count} dilynwr newydd tra eich bod i ffwrdd! Hwrê!
-        zero: Hefyd, rydych wedi ennill %{count} dilynwr newydd tra eich bod i ffwrdd! Hwrê!
-      title: Yn eich absenoldeb...
     favourite:
       body: 'Cafodd eich statws ei hoffi gan %{name}:'
       subject: Hoffodd %{name} eich statws
@@ -1063,8 +1012,6 @@ cy:
       too_late: Mae'n rhy hwyr i apelio yn erbyn y rhybudd hwn
   tags:
     does_not_match_previous_name: ddim yn cyfateb i'r enw blaenorol
-  terms:
-    title: "%{instance} Termau Gwasanaeth a Polisi Preifatrwydd"
   themes:
     contrast: Mastodon (Cyferbyniad uchel)
     default: Mastodon (Tywyll)
@@ -1096,20 +1043,11 @@ cy:
         suspend: Cyfrif wedi'i rewi
     welcome:
       edit_profile_action: Sefydlu proffil
-      edit_profile_step: Mae modd i chi addasu eich proffil drwy uwchlwytho afatar, pennawd, drwy newid eich enw arddangos a mwy. Os hoffech chi adolygu dilynwyr newydd cyn iddynt gael caniatad i'ch dilyn, mae modd i chi gloi eich cyfrif.
       explanation: Dyma ambell nodyn i'ch helpu i ddechrau
       final_action: Dechrau postio
-      final_step: 'Dechrau postio! Hyd yn oed heb ddilynwyr mae''n bosib i eraill weld eich negeseuon cyhoeddus, er enghraifft at y ffrwd leol ac mewn hashnodau. Mae''n bosib yr hoffech hi gyflwyno''ch hun ar yr hashnod #introductions.'
       full_handle: Eich enw llawn
       full_handle_hint: Dyma'r hyn y bysech yn dweud wrth eich ffrindiau er mwyn iddyn nhw gael anfon neges atoch o achos arall.
-      review_preferences_action: Newid dewisiadau
-      review_preferences_step: Gwnewch yn siŵr i chi osod eich dewisiadau, megis pa e-byst hoffech eu derbyn, neu ba lefel preifatrwydd hoffech eich tŵtiau ragosod i. Os nad oes gennych salwch symud, gallwch ddewis i ganiatau chwarae GIFs yn awtomatig.
       subject: Croeso i Mastodon
-      tip_federated_timeline: Mae'r ffrwd ffederasiwn yn olwg firehose o'r rhwydwaith Mastodon. Ond mae ond yn cynnwys y bobl mae eich cymdogion wedi ymrestru iddynt, felly nid yw'n gyflawn.
-      tip_following: Rydych yn dilyn goruwchwyliwr eich gweinydd yn ddiofyn. I ganfod pobl mwy diddorol, edrychwch ar y ffrydiau lleol a'r rhai wedi ei ffedereiddio.
-      tip_local_timeline: Mae'r ffrwd leol yn olwg firehose o bobl ar %{instance}. Dyma eich cymdogion agosaf!
-      tip_mobile_webapp: Os yw eich porwr gwe yn cynnig i chi ychwanegu Mastodon i'ch sgrîn gartref, mae modd i chi dderbyn hysbysiadau gwthiadwy. Mewn sawl modd mae'n gweithio fel ap cynhenid!
-      tips: Awgrymiadau
       title: Croeso, %{name}!
   users:
     follow_limit_reached: Nid oes modd i chi ddilyn mwy na %{limit} o bobl

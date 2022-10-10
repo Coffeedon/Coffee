@@ -12,7 +12,6 @@
               = logo_as_symbol(:wordmark)
 
             - unless whitelist_mode?
-              = link_to t('directories.directory'), explore_path, class: 'nav-link optional' if Setting.profile_directory
               = link_to t('about.about_this'), about_more_path, class: 'nav-link optional'
               = link_to t('about.apps'), 'https://joinmastodon.org/apps', class: 'nav-link optional'
 
@@ -33,8 +32,7 @@
           .column-0
             %h4= t 'footer.resources'
             %ul
-              %li= link_to t('about.terms'), terms_path
-              %li= link_to t('about.privacy_policy'), terms_path
+              %li= link_to t('about.privacy_policy'), privacy_policy_path
           .column-1
             %h4= t 'footer.developers'
             %ul
@@ -57,6 +55,6 @@
         .legal-xs
           = link_to "v#{Mastodon::Version.to_s}", Mastodon::Version.source_url
           ·
-          = link_to t('about.privacy_policy'), terms_path
+          = link_to t('about.privacy_policy'), privacy_policy_path
 
 = render template: 'layouts/application'

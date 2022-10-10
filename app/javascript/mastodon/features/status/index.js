@@ -32,6 +32,8 @@ import {
   editStatus,
   hideStatus,
   revealStatus,
+  translateStatus,
+  undoStatusTranslation,
 } from '../../actions/statuses';
 import {
   unblockAccount,
@@ -58,6 +60,7 @@ import { boostModal, deleteModal } from '../../initial_state';
 import { attachFullscreenListener, detachFullscreenListener, isFullscreen } from '../ui/util/fullscreen';
 import { textForScreenReader, defaultMediaVisibility } from '../../components/status';
 import Icon from 'mastodon/components/icon';
+import { Helmet } from 'react-helmet';
 
 const messages = defineMessages({
   deleteConfirm: { id: 'confirmations.delete.confirm', defaultMessage: 'Delete' },
@@ -154,12 +157,30 @@ const makeMapStateToProps = () => {
   return mapStateToProps;
 };
 
+const truncate = (str, num) => {
+  if (str.length > num) {
+    return str.slice(0, num) + '…';
+  } else {
+    return str;
+  }
+};
+
+const titleFromStatus = status => {
+  const displayName = status.getIn(['account', 'display_name']);
+  const username = status.getIn(['account', 'username']);
+  const prefix = displayName.trim().length === 0 ? username : displayName;
+  const text = status.get('search_index');
+
+  return `${prefix}: "${truncate(text, 30)}"`;
+};
+
 export default @injectIntl
 @connect(makeMapStateToProps)
 class Status extends ImmutablePureComponent {
 
   static contextTypes = {
     router: PropTypes.object,
+    identity: PropTypes.object,
   };
 
   static propTypes = {
@@ -208,10 +229,21 @@ class Status extends ImmutablePureComponent {
   }
 
   handleFavouriteClick = (status) => {
-    if (status.get('favourited')) {
-      this.props.dispatch(unfavourite(status));
+    const { dispatch } = this.props;
+    const { signedIn } = this.context.identity;
+
+    if (signedIn) {
+      if (status.get('favourited')) {
+        dispatch(unfavourite(status));
+      } else {
+        dispatch(favourite(status));
+      }
     } else {
-      this.props.dispatch(favourite(status));
+      dispatch(openModal('INTERACTION', {
+        type: 'favourite',
+        accountId: status.getIn(['account', 'id']),
+        url: status.get('url'),
+      }));
     }
   }
 
@@ -224,15 +256,25 @@ class Status extends ImmutablePureComponent {
   }
 
   handleReplyClick = (status) => {
-    let { askReplyConfirmation, dispatch, intl } = this.props;
-    if (askReplyConfirmation) {
-      dispatch(openModal('CONFIRM', {
-        message: intl.formatMessage(messages.replyMessage),
-        confirm: intl.formatMessage(messages.replyConfirm),
-        onConfirm: () => dispatch(replyCompose(status, this.context.router.history)),
-      }));
+    const { askReplyConfirmation, dispatch, intl } = this.props;
+    const { signedIn } = this.context.identity;
+
+    if (signedIn) {
+      if (askReplyConfirmation) {
+        dispatch(openModal('CONFIRM', {
+          message: intl.formatMessage(messages.replyMessage),
+          confirm: intl.formatMessage(messages.replyConfirm),
+          onConfirm: () => dispatch(replyCompose(status, this.context.router.history)),
+        }));
+      } else {
+        dispatch(replyCompose(status, this.context.router.history));
+      }
     } else {
-      dispatch(replyCompose(status, this.context.router.history));
+      dispatch(openModal('INTERACTION', {
+        type: 'reply',
+        accountId: status.getIn(['account', 'id']),
+        url: status.get('url'),
+      }));
     }
   }
 
@@ -241,14 +283,25 @@ class Status extends ImmutablePureComponent {
   }
 
   handleReblogClick = (status, e) => {
-    if (status.get('reblogged')) {
-      this.props.dispatch(unreblog(status));
-    } else {
-      if ((e && e.shiftKey) || !boostModal) {
-        this.handleModalReblog(status);
+    const { dispatch } = this.props;
+    const { signedIn } = this.context.identity;
+
+    if (signedIn) {
+      if (status.get('reblogged')) {
+        dispatch(unreblog(status));
       } else {
-        this.props.dispatch(initBoostModal({ status, onReblog: this.handleModalReblog }));
+        if ((e && e.shiftKey) || !boostModal) {
+          this.handleModalReblog(status);
+        } else {
+          dispatch(initBoostModal({ status, onReblog: this.handleModalReblog }));
+        }
       }
+    } else {
+      dispatch(openModal('INTERACTION', {
+        type: 'reblog',
+        accountId: status.getIn(['account', 'id']),
+        url: status.get('url'),
+      }));
     }
   }
 
@@ -336,6 +389,16 @@ class Status extends ImmutablePureComponent {
       this.props.dispatch(revealStatus(statusIds));
     } else {
       this.props.dispatch(hideStatus(statusIds));
+    }
+  }
+
+  handleTranslate = status => {
+    const { dispatch } = this.props;
+
+    if (status.get('translation')) {
+      dispatch(undoStatusTranslation(status.get('id')));
+    } else {
+      dispatch(translateStatus(status.get('id')));
     }
   }
 
@@ -558,6 +621,7 @@ class Status extends ImmutablePureComponent {
                   onOpenVideo={this.handleOpenVideo}
                   onOpenMedia={this.handleOpenMedia}
                   onToggleHidden={this.handleToggleHidden}
+                  onTranslate={this.handleTranslate}
                   domain={domain}
                   showMedia={this.state.showMedia}
                   onToggleMediaVisibility={this.handleToggleMediaVisibility}
@@ -592,6 +656,10 @@ class Status extends ImmutablePureComponent {
             {descendants}
           </div>
         </ScrollContainer>
+
+        <Helmet>
+          <title>{titleFromStatus(status)}</title>
+        </Helmet>
       </Column>
     );
   }

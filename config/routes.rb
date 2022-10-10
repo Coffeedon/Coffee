@@ -95,7 +95,6 @@ Rails.application.routes.draw do
   get  '/interact/:id', to: 'remote_interaction#new', as: :remote_interaction
   post '/interact/:id', to: 'remote_interaction#create'
 
-  get '/explore', to: 'directories#index', as: :explore
   get '/settings', to: redirect('/settings/profile')
 
   namespace :settings do
@@ -177,11 +176,20 @@ Rails.application.routes.draw do
   resources :tags,   only: [:show]
   resources :emojis, only: [:show]
   resources :invites, only: [:index, :create, :destroy]
-  resources :filters, except: [:show]
+  resources :filters, except: [:show] do
+    resources :statuses, only: [:index], controller: 'filters/statuses' do
+      collection do
+        post :batch
+      end
+    end
+  end
+
   resource :relationships, only: [:show, :update]
   resource :statuses_cleanup, controller: :statuses_cleanup, only: [:show, :update]
 
-  get '/public', to: 'public_timelines#show', as: :public_timeline
+  get '/explore', to: redirect('/web/explore')
+  get '/public', to: redirect('/web/public')
+  get '/public/local', to: redirect('/web/public/local')
   get '/media_proxy/:id/(*any)', to: 'media_proxy#show', as: :media_proxy
 
   resource :authorize_interaction, only: [:show, :create]
@@ -386,6 +394,8 @@ Rails.application.routes.draw do
 
           resource :history, only: :show
           resource :source, only: :show
+
+          post :translate, to: 'translations#create'
         end
 
         member do
@@ -448,12 +458,14 @@ Rails.application.routes.draw do
       resources :trends,       only: [:index], controller: 'trends/tags'
       resources :filters,      only: [:index, :create, :show, :update, :destroy] do
         resources :keywords, only: [:index, :create], controller: 'filters/keywords'
+        resources :statuses, only: [:index, :create], controller: 'filters/statuses'
       end
       resources :endorsements, only: [:index]
       resources :markers,      only: [:index, :create]
 
       namespace :filters do
         resources :keywords, only: [:show, :update, :destroy]
+        resources :statuses, only: [:show, :destroy]
       end
 
       namespace :apps do
@@ -474,8 +486,9 @@ Rails.application.routes.draw do
 
       resource :instance, only: [:show] do
         resources :peers, only: [:index], controller: 'instances/peers'
-        resource :activity, only: [:show], controller: 'instances/activity'
         resources :rules, only: [:index], controller: 'instances/rules'
+        resource :privacy_policy, only: [:show], controller: 'instances/privacy_policies'
+        resource :activity, only: [:show], controller: 'instances/activity'
       end
 
       resource :domain_blocks, only: [:show, :create, :destroy]
@@ -582,6 +595,8 @@ Rails.application.routes.draw do
 
         resources :domain_allows, only: [:index, :show, :create, :destroy]
         resources :domain_blocks, only: [:index, :show, :update, :create, :destroy]
+        resources :email_domain_blocks, only: [:index, :show, :create, :destroy]
+        resources :ip_blocks, only: [:index, :show, :update, :create, :destroy]
 
         namespace :trends do
           resources :tags, only: [:index]
@@ -592,14 +607,22 @@ Rails.application.routes.draw do
         post :measures, to: 'measures#create'
         post :dimensions, to: 'dimensions#create'
         post :retention, to: 'retention#create'
+
+        resources :canonical_email_blocks, only: [:index, :create, :show, :destroy] do
+          collection do
+            post :test
+          end
+        end
       end
     end
 
     namespace :v2 do
-      resources :media, only: [:create]
       get '/search', to: 'search#index', as: :search
+
+      resources :media,       only: [:create]
       resources :suggestions, only: [:index]
       resources :filters,     only: [:index, :create, :show, :update, :destroy]
+      resource  :instance,    only: [:show]
 
       namespace :admin do
         resources :accounts, only: [:index]
@@ -619,9 +642,11 @@ Rails.application.routes.draw do
 
   get '/web/(*any)', to: 'home#index', as: :web
 
-  get '/about',        to: 'about#show'
+  get '/about',        to: redirect('/')
   get '/about/more',   to: 'about#more'
-  get '/terms',        to: 'about#terms'
+
+  get '/privacy-policy', to: 'privacy#show', as: :privacy_policy
+  get '/terms',          to: redirect('/privacy-policy')
 
   match '/', via: [:post, :put, :patch, :delete], to: 'application#raise_not_found', format: false
   match '*unmatched_route', via: :all, to: 'application#raise_not_found', format: false

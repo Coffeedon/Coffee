@@ -57,6 +57,14 @@ const mapDispatchToProps = (dispatch, { intl }) => ({
     }
   },
 
+  onInteractionModal (account) {
+    dispatch(openModal('INTERACTION', {
+      type: 'follow',
+      accountId: account.get('id'),
+      url: account.get('url'),
+    }));
+  },
+
   onBlock (account) {
     if (account.getIn(['relationship', 'blocking'])) {
       dispatch(unblockAccount(account.get('id')));
@@ -121,8 +129,14 @@ const mapDispatchToProps = (dispatch, { intl }) => ({
     dispatch(unblockDomain(domain));
   },
 
-  onAddToList(account){
+  onAddToList (account) {
     dispatch(openModal('LIST_ADDER', {
+      accountId: account.get('id'),
+    }));
+  },
+
+  onChangeLanguages (account) {
+    dispatch(openModal('SUBSCRIBED_LANGUAGES', {
       accountId: account.get('id'),
     }));
   },

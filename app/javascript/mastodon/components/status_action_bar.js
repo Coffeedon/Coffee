@@ -44,6 +44,7 @@ const messages = defineMessages({
   unblockDomain: { id: 'account.unblock_domain', defaultMessage: 'Unblock domain {domain}' },
   unmute: { id: 'account.unmute', defaultMessage: 'Unmute @{name}' },
   unblock: { id: 'account.unblock', defaultMessage: 'Unblock @{name}' },
+  filter: { id: 'status.filter', defaultMessage: 'Filter this post' },
 });
 
 const mapStateToProps = (state, { status }) => ({
@@ -80,6 +81,8 @@ class StatusActionBar extends ImmutablePureComponent {
     onPin: PropTypes.func,
     onBookmark: PropTypes.func,
     onFilter: PropTypes.func,
+    onAddFilter: PropTypes.func,
+    onInteractionModal: PropTypes.func,
     withDismiss: PropTypes.bool,
     withCounters: PropTypes.bool,
     scrollKey: PropTypes.string,
@@ -95,10 +98,12 @@ class StatusActionBar extends ImmutablePureComponent {
   ]
 
   handleReplyClick = () => {
-    if (me) {
+    const { signedIn } = this.context.identity;
+
+    if (signedIn) {
       this.props.onReply(this.props.status, this.context.router.history);
     } else {
-      this._openInteractionDialog('reply');
+      this.props.onInteractionModal('reply', this.props.status);
     }
   }
 
@@ -112,23 +117,23 @@ class StatusActionBar extends ImmutablePureComponent {
   }
 
   handleFavouriteClick = () => {
-    if (me) {
+    const { signedIn } = this.context.identity;
+
+    if (signedIn) {
       this.props.onFavourite(this.props.status);
     } else {
-      this._openInteractionDialog('favourite');
+      this.props.onInteractionModal('favourite', this.props.status);
     }
   }
 
   handleReblogClick = e => {
-    if (me) {
+    const { signedIn } = this.context.identity;
+
+    if (signedIn) {
       this.props.onReblog(this.props.status, e);
     } else {
-      this._openInteractionDialog('reblog');
+      this.props.onInteractionModal('reblog', this.props.status);
     }
-  }
-
-  _openInteractionDialog = type => {
-    window.open(`/interact/${this.props.status.get('id')}?type=${type}`, 'mastodon-intent', 'width=445,height=600,resizable=no,menubar=no,status=no,scrollbars=yes');
   }
 
   handleBookmarkClick = () => {
@@ -211,8 +216,8 @@ class StatusActionBar extends ImmutablePureComponent {
     this.props.onMuteConversation(this.props.status);
   }
 
-  handleFilter = () => {
-    this.props.onFilter();
+  handleFilterClick = () => {
+    this.props.onAddFilter(this.props.status);
   }
 
   handleCopy = () => {
@@ -235,7 +240,7 @@ class StatusActionBar extends ImmutablePureComponent {
   }
 
 
-  handleFilterClick = () => {
+  handleHideClick = () => {
     this.props.onFilter();
   }
 
@@ -294,6 +299,12 @@ class StatusActionBar extends ImmutablePureComponent {
         menu.push({ text: intl.formatMessage(messages.block, { name: account.get('username') }), action: this.handleBlockClick });
       }
 
+      if (!this.props.onFilter) {
+        menu.push(null);
+        menu.push({ text: intl.formatMessage(messages.filter), action: this.handleFilterClick });
+        menu.push(null);
+      }
+
       menu.push({ text: intl.formatMessage(messages.report, { name: account.get('username') }), action: this.handleReport });
 
       if (account.get('acct') !== account.get('username')) {
@@ -343,7 +354,7 @@ class StatusActionBar extends ImmutablePureComponent {
     );
 
     const filterButton = this.props.onFilter && (
-      <IconButton className='status__action-bar-button' title={intl.formatMessage(messages.hide)} icon='eye' onClick={this.handleFilterClick} />
+      <IconButton className='status__action-bar-button' title={intl.formatMessage(messages.hide)} icon='eye' onClick={this.handleHideClick} />
     );
 
     return (
