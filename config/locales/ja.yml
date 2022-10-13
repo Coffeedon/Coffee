@@ -2,37 +2,14 @@
 ja:
   about:
     about_mastodon_html: Mastodonは、オープンなウェブプロトコルを採用した、自由でオープンソースなソーシャルネットワークです。電子メールのような分散型の仕組みを採っています。
-    about_this: 詳細情報
-    administered_by: '管理者:'
     api: API
     apps: アプリ
-    contact: 連絡先
     contact_missing: 未設定
     contact_unavailable: N/A
     documentation: ドキュメント
     hosted_on: Mastodon hosted on %{domain}
-    instance_actor_flash: "このアカウントはサーバーそのものを示す仮想的なもので、特定のユーザーを示すものではありません。これはサーバーの連合のために使用されます。サーバー全体をブロックするときは、このアカウントをブロックせずに、ドメインブロックを使用してください。 \n"
     privacy_policy: プライバシーポリシー
-    rules: サーバーのルール
-    rules_html: 'このMastodonサーバーには、アカウントの所持にあたって従うべきルールが設定されています。概要は以下の通りです:'
     source_code: ソースコード
-    status_count_after:
-      other: 投稿
-    status_count_before: 投稿数
-    unavailable_content: 制限中のサーバー
-    unavailable_content_description:
-      domain: サーバー
-      reason: 制限理由
-      rejecting_media: 'これらのサーバーからのメディアファイルは処理されず、保存や変換もされません。サムネイルも表示されません。表示するにはクリックしてそのサーバーに直接アクセスする必要があります:'
-      rejecting_media_title: メディアを拒否しているサーバー
-      silenced: 'これらのサーバーからの投稿は公開タイムラインと会話から隠されます。また該当するユーザーからの通知は相手をフォローしている場合を除き表示されません:'
-      silenced_title: サイレンス済みのサーバー
-      suspended: 'これらのサーバーからのデータは処理されず、保存や変換もされません。該当するユーザーとの交流もできません:'
-      suspended_title: 停止済みのサーバー
-    unavailable_content_html: 通常Mastodonでは連合先のどんなサーバーのユーザーとでもやりとりできます。ただし次のサーバーには例外が設定されています。
-    user_count_after:
-      other: 人
-    user_count_before: ユーザー数
     what_is_mastodon: Mastodonとは？
   accounts:
     choices_html: "%{name}によるおすすめ:"
@@ -268,6 +245,7 @@ ja:
         approve_user_html: "%{target}から登録された%{name}さんを承認しました"
         assigned_to_self_report_html: "%{name}さんが通報 %{target}を自身の担当に割り当てました"
         change_email_user_html: "%{name}さんが%{target}さんのメールアドレスを変更しました"
+        change_role_user_html: "%{name}さんが%{target}さんのロールを変更しました"
         confirm_user_html: "%{name}さんが%{target}さんのメールアドレスを確認済みにしました"
         create_account_warning_html: "%{name}さんが%{target}さんに警告メールを送信しました"
         create_announcement_html: "%{name}さんが新しいお知らせ %{target}を作成しました"
@@ -277,8 +255,10 @@ ja:
         create_email_domain_block_html: "%{name}さんが%{target}をメールドメインブロックに追加しました"
         create_ip_block_html: "%{name}さんがIP %{target}のルールを作成しました"
         create_unavailable_domain_html: "%{name}がドメイン %{target}への配送を停止しました"
+        create_user_role_html: "%{name}さんがロール『%{target}』を作成しました"
         demote_user_html: "%{name}さんが%{target}さんを降格しました"
         destroy_announcement_html: "%{name}さんがお知らせ %{target}を削除しました"
+        destroy_custom_emoji_html: "%{name}さんがカスタム絵文字『%{target}』を削除しました"
         destroy_domain_allow_html: "%{name}さんが%{target}の連合許可を外しました"
         destroy_domain_block_html: "%{name}さんがドメイン %{target}のブロックを外しました"
         destroy_email_domain_block_html: "%{name}さんが%{target}をメールドメインブロックから外しました"
@@ -286,6 +266,7 @@ ja:
         destroy_ip_block_html: "%{name}さんが IP %{target}のルールを削除しました"
         destroy_status_html: "%{name}さんが%{target}さんの投稿を削除しました"
         destroy_unavailable_domain_html: "%{name}がドメイン %{target}への配送を再開しました"
+        destroy_user_role_html: "%{name}さんがロール『%{target}』を削除しました"
         disable_2fa_user_html: "%{name}さんが%{target}さんの二要素認証を無効化しました"
         disable_custom_emoji_html: "%{name}さんがカスタム絵文字 %{target}を無効化しました"
         disable_sign_in_token_auth_user_html: "%{name}さんが%{target}さんのメールトークン認証を無効にしました"
@@ -313,6 +294,7 @@ ja:
         update_custom_emoji_html: "%{name}さんがカスタム絵文字 %{target}を更新しました"
         update_domain_block_html: "%{name}さんが%{target}のドメインブロックを更新しました"
         update_status_html: "%{name}さんが%{target}さんの投稿を更新しました"
+        update_user_role_html: "%{name}さんがロール『%{target}』を変更しました"
       empty: ログが見つかりませんでした
       filter_by_action: アクションでフィルター
       filter_by_user: ユーザーでフィルター
@@ -404,6 +386,7 @@ ja:
       destroyed_msg: ドメインブロックを外しました
       domain: ドメイン
       edit: ドメインブロックを編集
+      existing_domain_block: あなたは既に%{name}さんに厳しい制限を課しています。
       existing_domain_block_html: 既に%{name}に対して、より厳しい制限を課しています。先に<a href="%{unblock_url}">その制限を解除</a>する必要があります。
       new:
         create: ブロックを作成
@@ -625,6 +608,7 @@ ja:
         devops: 開発者
         invites: 招待
         moderation: モデレーション
+        special: スペシャル
       delete: 削除
       description_html: "<strong>ユーザー ロール</strong>を使用すると、ユーザーがアクセスできる Mastodon の機能や領域をカスタマイズできます。"
       edit: "『%{name}』のロールを編集"
@@ -700,9 +684,6 @@ ja:
         users: ログイン済みローカルユーザーのみ許可
       domain_blocks_rationale:
         title: コメントを表示
-      hero:
-        desc_html: フロントページに表示されます。サイズは600x100px以上推奨です。未設定の場合、標準のサムネイルが使用されます
-        title: ヒーローイメージ
       mascot:
         desc_html: 複数のページに表示されます。サイズは293x205px以上推奨です。未設定の場合、標準のマスコットが使用されます
         title: マスコットイメージ
@@ -858,6 +839,8 @@ ja:
       edit: エンドポイントを編集
       enable: 有効化
       enabled: アクティブ
+      enabled_events:
+        other: "%{count}件の有効なイベント"
       events: イベント
       new: 新しいwebhook
       status: ステータス
@@ -926,6 +909,7 @@ ja:
     warning: このデータは気をつけて取り扱ってください。他の人と共有しないでください！
     your_token: アクセストークン
   auth:
+    apply_for_account: ウェイトリストを取得する
     change_password: パスワード
     delete_account: アカウントの削除
     delete_account_html: アカウントを削除したい場合、<a href="%{path}">こちら</a>から手続きが行えます。削除する前に、確認画面があります。
@@ -1103,6 +1087,7 @@ ja:
     edit:
       add_keyword: キーワードを追加
       keywords: キーワード
+      statuses: 個別の投稿
       title: フィルターを編集
     errors:
       invalid_context: 対象がないか無効です
@@ -1116,10 +1101,18 @@ ja:
         other: "%{count}件のキーワード"
       statuses:
         other: "%{count}件の投稿"
+      statuses_long:
+        other: "%{count}件の投稿を非表示にしました"
       title: フィルター
     new:
       save: 新規フィルターを保存
       title: 新規フィルターを追加
+    statuses:
+      back_to_filter: フィルタに戻る
+      batch:
+        remove: フィルターから削除する
+      index:
+        title: フィルターされた投稿
   footer:
     developers: 開発者向け
     more: さらに…
@@ -1130,6 +1123,7 @@ ja:
     changes_saved_msg: 正常に変更されました！
     copy: コピー
     delete: 削除
+    deselect: 選択解除
     none: なし
     order_by: 並び順
     save_changes: 変更を保存
@@ -1310,6 +1304,8 @@ ja:
     other: その他
     posting_defaults: デフォルトの投稿設定
     public_timelines: 公開タイムライン
+  privacy_policy:
+    title: プライバシーポリシー
   reactions:
     errors:
       limit_reached: リアクションの種類が上限に達しました
