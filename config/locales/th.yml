@@ -2,44 +2,24 @@
 th:
   about:
     about_mastodon_html: 'เครือข่ายสังคมแห่งอนาคต: ไม่มีโฆษณา ไม่มีการสอดแนมโดยองค์กร การออกแบบตามหลักจริยธรรม และการกระจายศูนย์! เป็นเจ้าของข้อมูลของคุณด้วย Mastodon!'
-    api: API
-    apps: แอปมือถือ
     contact_missing: ไม่ได้ตั้ง
     contact_unavailable: ไม่มี
-    documentation: เอกสารประกอบ
     hosted_on: Mastodon ที่โฮสต์ที่ %{domain}
-    privacy_policy: นโยบายความเป็นส่วนตัว
-    source_code: โค้ดต้นฉบับ
-    what_is_mastodon: Mastodon คืออะไร?
+    title: เกี่ยวกับ
   accounts:
-    choices_html: 'ตัวเลือกของ %{name}:'
-    endorsements_hint: คุณสามารถแนะนำผู้คนที่คุณติดตามจากส่วนติดต่อเว็บ และเขาจะปรากฏที่นี่
-    featured_tags_hint: คุณสามารถแนะนำแฮชแท็กที่เฉพาะเจาะจงที่จะแสดงที่นี่
     follow: ติดตาม
     followers:
       other: ผู้ติดตาม
     following: กำลังติดตาม
     instance_actor_flash: บัญชีนี้เป็นตัวดำเนินการเสมือนที่ใช้เพื่อเป็นตัวแทนของเซิร์ฟเวอร์เองและไม่ใช่ผู้ใช้รายบุคคลใด ๆ บัญชีใช้สำหรับวัตถุประสงค์ในการติดต่อกับภายนอกและไม่ควรได้รับการระงับ
-    joined: เข้าร่วมเมื่อ %{date}
     last_active: ใช้งานล่าสุด
     link_verified_on: ตรวจสอบความเป็นเจ้าของของลิงก์นี้เมื่อ %{date}
-    media: สื่อ
-    moved_html: "%{name} ได้ย้ายไปยัง %{new_profile_link}:"
-    network_hidden: ไม่มีข้อมูลนี้
     nothing_here: ไม่มีสิ่งใดที่นี่!
-    people_followed_by: ผู้คนที่ %{name} ติดตาม
-    people_who_follow: ผู้คนที่ติดตาม %{name}
     pin_errors:
       following: คุณต้องกำลังติดตามบุคคลที่คุณต้องการแนะนำอยู่แล้ว
     posts:
       other: โพสต์
     posts_tab_heading: โพสต์
-    posts_with_replies: โพสต์และการตอบกลับ
-    roles:
-      bot: บอต
-      group: กลุ่ม
-    unavailable: โปรไฟล์ไม่พร้อมใช้งาน
-    unfollow: เลิกติดตาม
   admin:
     account_actions:
       action: ทำการกระทำ
@@ -224,6 +204,7 @@ th:
         reject_user: ปฏิเสธผู้ใช้
         remove_avatar_user: เอาภาพประจำตัวออก
         reopen_report: เปิดรายงานใหม่
+        resend_user: ส่งจดหมายยืนยันใหม่
         reset_password_user: ตั้งรหัสผ่านใหม่
         resolve_report: แก้ปัญหารายงาน
         sensitive_account: บังคับให้บัญชีละเอียดอ่อน
@@ -282,6 +263,7 @@ th:
         reject_user_html: "%{name} ได้ปฏิเสธการลงทะเบียนจาก %{target}"
         remove_avatar_user_html: "%{name} ได้เอาภาพประจำตัวของ %{target} ออก"
         reopen_report_html: "%{name} ได้เปิดรายงาน %{target} ใหม่"
+        resend_user_html: "%{name} ได้ส่งอีเมลยืนยันสำหรับ %{target} ใหม่"
         reset_password_user_html: "%{name} ได้ตั้งรหัสผ่านของผู้ใช้ %{target} ใหม่"
         resolve_report_html: "%{name} ได้แก้ปัญหารายงาน %{target}"
         sensitive_account_html: "%{name} ได้ทำเครื่องหมายสื่อของ %{target} ว่าละเอียดอ่อน"
@@ -661,91 +643,61 @@ th:
       empty: ยังไม่ได้กำหนดกฎของเซิร์ฟเวอร์
       title: กฎของเซิร์ฟเวอร์
     settings:
-      activity_api_enabled:
-        desc_html: จำนวนโพสต์ที่เผยแพร่ในเซิร์ฟเวอร์, ผู้ใช้ที่ใช้งานอยู่ และการลงทะเบียนใหม่ในบักเก็ตรายสัปดาห์
-        title: เผยแพร่สถิติรวมเกี่ยวกับกิจกรรมผู้ใช้ใน API
-      bootstrap_timeline_accounts:
-        desc_html: แยกหลายชื่อผู้ใช้ด้วยจุลภาค จะรับประกันว่าจะแสดงบัญชีเหล่านี้ในคำแนะนำการติดตาม
-        title: แนะนำบัญชีเหล่านี้ให้กับผู้ใช้ใหม่
-      contact_information:
-        email: อีเมลธุรกิจ
-        username: ชื่อผู้ใช้ในการติดต่อ
-      custom_css:
-        desc_html: ปรับเปลี่ยนรูปลักษณ์ด้วย CSS ที่โหลดในทุกหน้า
-        title: CSS ที่กำหนดเอง
-      default_noindex:
-        desc_html: มีผลต่อผู้ใช้ทั้งหมดที่ไม่ได้เปลี่ยนการตั้งค่านี้ด้วยตนเอง
-        title: เลือกให้ผู้ใช้ไม่รับการทำดัชนีโดยเครื่องมือค้นหาเป็นค่าเริ่มต้น
+      about:
+        manage_rules: จัดการกฎของเซิร์ฟเวอร์
+        title: เกี่ยวกับ
+      appearance:
+        preamble: ปรับแต่งส่วนติดต่อเว็บของ Mastodon
+        title: ลักษณะที่ปรากฏ
+      branding:
+        title: ตราสินค้า
+      content_retention:
+        title: การเก็บรักษาเนื้อหา
+      discovery:
+        follow_recommendations: คำแนะนำการติดตาม
+        profile_directory: ไดเรกทอรีโปรไฟล์
+        public_timelines: เส้นเวลาสาธารณะ
+        title: การค้นพบ
+        trends: แนวโน้ม
       domain_blocks:
         all: ให้กับทุกคน
         disabled: ให้กับไม่มีใคร
-        title: แสดงการปิดกั้นโดเมน
         users: ให้กับผู้ใช้ในเซิร์ฟเวอร์ที่เข้าสู่ระบบ
-      domain_blocks_rationale:
-        title: แสดงคำชี้แจงเหตุผล
-      mascot:
-        desc_html: แสดงในหลายหน้า อย่างน้อย 293×205px ที่แนะนำ เมื่อไม่ได้ตั้ง กลับไปใช้มาสคอตเริ่มต้น
-        title: ภาพมาสคอต
-      peers_api_enabled:
-        desc_html: ชื่อโดเมนที่เซิร์ฟเวอร์นี้ได้พบในจักรวาลสหพันธ์
-        title: เผยแพร่รายการเซิร์ฟเวอร์ที่ค้นพบใน API
-      preview_sensitive_media:
-        desc_html: การแสดงตัวอย่างลิงก์ในเว็บไซต์อื่น ๆ จะแสดงภาพขนาดย่อแม้ว่าจะมีการทำเครื่องหมายสื่อว่าละเอียดอ่อน
-        title: แสดงสื่อที่ละเอียดอ่อนในการแสดงตัวอย่าง OpenGraph
-      profile_directory:
-        desc_html: อนุญาตให้ผู้ใช้สามารถค้นพบได้
-        title: เปิดใช้งานไดเรกทอรีโปรไฟล์
       registrations:
-        closed_message:
-          desc_html: แสดงในหน้าแรกเมื่อปิดการลงทะเบียน คุณสามารถใช้แท็ก HTML
-          title: ข้อความการปิดการลงทะเบียน
-        require_invite_text:
-          title: ต้องให้ผู้ใช้ใหม่ป้อนเหตุผลที่จะเข้าร่วม
+        title: การลงทะเบียน
       registrations_mode:
         modes:
           approved: ต้องการการอนุมัติสำหรับการลงทะเบียน
           none: ไม่มีใครสามารถลงทะเบียน
           open: ใครก็ตามสามารถลงทะเบียน
-        title: โหมดการลงทะเบียน
-      site_description:
-        desc_html: ย่อหน้าเกริ่นนำใน API อธิบายถึงสิ่งที่ทำให้เซิร์ฟเวอร์ Mastodon นี้พิเศษและสิ่งอื่นใดที่สำคัญ คุณสามารถใช้แท็ก HTML โดยเฉพาะอย่างยิ่ง <code>&lt;a&gt;</code> และ <code>&lt;em&gt;</code>
-        title: คำอธิบายเซิร์ฟเวอร์
-      site_description_extended:
-        desc_html: สถานที่ที่ดีสำหรับแนวทางปฏิบัติ, กฎ, หลักเกณฑ์ และสิ่งอื่น ๆ ของคุณที่ทำให้เซิร์ฟเวอร์ของคุณแตกต่าง คุณสามารถใช้แท็ก HTML
-        title: ข้อมูลแบบขยายที่กำหนดเอง
-      site_short_description:
-        desc_html: แสดงในแถบข้างและแท็กเมตา อธิบายว่า Mastodon คืออะไรและสิ่งที่ทำให้เซิร์ฟเวอร์นี้พิเศษในย่อหน้าเดียว
-        title: คำอธิบายเซิร์ฟเวอร์แบบสั้น
-      site_terms:
-        desc_html: คุณสามารถเขียนนโยบายความเป็นส่วนตัวของคุณเอง คุณสามารถใช้แท็ก HTML
-        title: นโยบายความเป็นส่วนตัวที่กำหนดเอง
-      site_title: ชื่อเซิร์ฟเวอร์
-      thumbnail:
-        desc_html: ใช้สำหรับการแสดงตัวอย่างผ่าน OpenGraph และ API 1200x630px ที่แนะนำ
-        title: ภาพขนาดย่อเซิร์ฟเวอร์
-      timeline_preview:
-        desc_html: แสดงลิงก์ไปยังเส้นเวลาสาธารณะในหน้าเริ่มต้นและอนุญาตการเข้าถึง API ไปยังเส้นเวลาสาธารณะโดยไม่มีการรับรองความถูกต้อง
-        title: อนุญาตการเข้าถึงเส้นเวลาสาธารณะที่ไม่ได้รับรองความถูกต้อง
-      title: การตั้งค่าไซต์
-      trendable_by_default:
-        title: อนุญาตแนวโน้มโดยไม่มีการตรวจทานล่วงหน้า
-      trends:
-        desc_html: แสดงเนื้อหาที่ตรวจทานแล้วก่อนหน้านี้ที่กำลังนิยมในปัจจุบันเป็นสาธารณะ
-        title: แนวโน้ม
+      title: การตั้งค่าเซิร์ฟเวอร์
     site_uploads:
       delete: ลบไฟล์ที่อัปโหลด
       destroyed_msg: ลบการอัปโหลดไซต์สำเร็จ!
     statuses:
+      account: ผู้สร้าง
+      application: แอปพลิเคชัน
       back_to_account: กลับไปที่หน้าบัญชี
       back_to_report: กลับไปที่หน้ารายงาน
       batch:
         remove_from_report: เอาออกจากรายงาน
         report: รายงาน
       deleted: ลบแล้ว
+      favourites: รายการโปรด
+      history: ประวัติรุ่น
+      in_reply_to: กำลังตอบกลับ
+      language: ภาษา
       media:
         title: สื่อ
+      metadata: ข้อมูลอภิพันธุ์
       no_status_selected: ไม่มีการเปลี่ยนแปลงโพสต์เนื่องจากไม่มีการเลือก
+      open: เปิดโพสต์
+      original_status: โพสต์ดั้งเดิม
+      reblogs: การดัน
+      status_changed: เปลี่ยนโพสต์แล้ว
       title: โพสต์ของบัญชี
+      trending: กำลังนิยม
+      visibility: การมองเห็น
       with_media: มีสื่อ
     strikes:
       actions:
@@ -884,7 +836,7 @@ th:
     advanced_web_interface: ส่วนติดต่อเว็บขั้นสูง
     animations_and_accessibility: ภาพเคลื่อนไหวและการช่วยการเข้าถึง
     confirmation_dialogs: กล่องโต้ตอบการยืนยัน
-    discovery: ค้นพบ
+    discovery: การค้นพบ
     localization:
       body: Mastodon ได้รับการแปลโดยอาสาสมัคร
       guide_link: https://crowdin.com/project/mastodon/th
@@ -906,6 +858,7 @@ th:
     warning: ระวังเป็นอย่างสูงกับข้อมูลนี้ อย่าแบ่งปันข้อมูลกับใครก็ตาม!
     your_token: โทเคนการเข้าถึงของคุณ
   auth:
+    apply_for_account: เข้ารายชื่อผู้รอ
     change_password: รหัสผ่าน
     delete_account: ลบบัญชี
     delete_account_html: หากคุณต้องการลบบัญชีของคุณ คุณสามารถ <a href="%{path}">ดำเนินการต่อที่นี่</a> คุณจะได้รับการถามเพื่อการยืนยัน
@@ -925,6 +878,7 @@ th:
     migrate_account: ย้ายไปยังบัญชีอื่น
     migrate_account_html: หากคุณต้องการเปลี่ยนเส้นทางบัญชีนี้ไปยังบัญชีอื่น คุณสามารถ <a href="%{path}">กำหนดค่าบัญชีที่นี่</a>
     or_log_in_with: หรือเข้าสู่ระบบด้วย
+    privacy_policy_agreement_html: ฉันได้อ่านและเห็นด้วยกับ <a href="%{privacy_policy_path}" target="_blank">นโยบายความเป็นส่วนตัว</a>
     providers:
       cas: CAS
       saml: SAML
@@ -940,6 +894,8 @@ th:
       email_below_hint_html: หากที่อยู่อีเมลด้านล่างไม่ถูกต้อง คุณสามารถเปลี่ยนที่อยู่อีเมลที่นี่และรับอีเมลยืนยันใหม่
       email_settings_hint_html: ส่งอีเมลยืนยันไปยัง %{email} แล้ว หากที่อยู่อีเมลนั้นไม่ถูกต้อง คุณสามารถเปลี่ยนที่อยู่อีเมลได้ในการตั้งค่าบัญชี
       title: การตั้งค่า
+    sign_up:
+      title: มาตั้งค่าของคุณใน %{domain} กันเลย
     status:
       account_status: สถานะบัญชี
       confirming: กำลังรอการยืนยันอีเมลให้เสร็จสมบูรณ์
@@ -1103,9 +1059,6 @@ th:
       index:
         title: โพสต์ที่กรองอยู่
   footer:
-    developers: นักพัฒนา
-    more: เพิ่มเติม…
-    resources: ทรัพยากร
     trending_now: กำลังนิยม
   generic:
     all: ทั้งหมด
@@ -1144,7 +1097,6 @@ th:
       following: รายการติดตาม
       muting: รายการซ่อน
     upload: อัปโหลด
-  in_memoriam_html: เพื่อระลึกถึง
   invites:
     delete: ปิดใช้งาน
     expired: หมดอายุแล้ว
@@ -1196,6 +1148,8 @@ th:
     followers_count: ผู้ติดตาม ณ เวลาที่ย้าย
     incoming_migrations: การย้ายจากบัญชีอื่น
     incoming_migrations_html: เพื่อย้ายจากบัญชีอื่นไปยังบัญชีนี้ ก่อนอื่นคุณจำเป็นต้อง <a href="%{path}">สร้างนามแฝงบัญชี</a>
+    moved_msg: ตอนนี้กำลังเปลี่ยนเส้นทางบัญชีของคุณไปยัง %{acct} และกำลังย้ายผู้ติดตามของคุณไป
+    not_redirecting: บัญชีของคุณไม่ได้กำลังเปลี่ยนเส้นทางไปยังบัญชีอื่นใดในปัจจุบัน
     on_cooldown: คุณเพิ่งโยกย้ายบัญชีของคุณ ฟังก์ชันนี้จะพร้อมใช้งานอีกครั้งในอีก %{count} วัน
     past_migrations: การโยกย้ายที่ผ่านมา
     proceed_with_move: ย้ายผู้ติดตาม
@@ -1212,6 +1166,8 @@ th:
     carry_blocks_over_text: ผู้ใช้นี้ได้ย้ายจาก %{acct} ซึ่งคุณได้ปิดกั้น
     carry_mutes_over_text: ผู้ใช้นี้ได้ย้ายจาก %{acct} ซึ่งคุณได้ซ่อน
     copy_account_note_text: 'ผู้ใช้นี้ได้ย้ายจาก %{acct} นี่คือหมายเหตุก่อนหน้านี้ของคุณเกี่ยวกับผู้ใช้:'
+  navigation:
+    toggle_menu: เปิด/ปิดเมนู
   notification_mailer:
     admin:
       report:
@@ -1310,21 +1266,7 @@ th:
     remove_selected_follows: เลิกติดตามผู้ใช้ที่เลือก
     status: สถานะบัญชี
   remote_follow:
-    acct: ป้อน username@domain ของคุณที่คุณต้องการกระทำจาก
     missing_resource: ไม่พบ URL การเปลี่ยนเส้นทางที่จำเป็นสำหรับบัญชีของคุณ
-    no_account_html: ไม่มีบัญชี? คุณสามารถ <a href='%{sign_up_path}' target='_blank'>ลงทะเบียนที่นี่</a>
-    proceed: ดำเนินการต่อเพื่อติดตาม
-    prompt: 'คุณกำลังจะติดตาม:'
-  remote_interaction:
-    favourite:
-      proceed: ดำเนินการต่อเพื่อชื่นชอบ
-      prompt: 'คุณต้องการชื่นชอบโพสต์นี้:'
-    reblog:
-      proceed: ดำเนินการต่อเพื่อดัน
-      prompt: 'คุณต้องการดันโพสต์นี้:'
-    reply:
-      proceed: ดำเนินการต่อเพื่อตอบกลับ
-      prompt: 'คุณต้องการตอบกลับโพสต์นี้:'
   reports:
     errors:
       invalid_rules: ไม่ได้อ้างอิงกฎที่ถูกต้อง

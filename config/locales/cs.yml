@@ -2,19 +2,11 @@
 cs:
   about:
     about_mastodon_html: 'Sociální síť budoucnosti: žádné reklamy, žádné korporátní sledování, etický design a decentralizace! S Mastodonem vlastníte svoje data!'
-    api: API
-    apps: Mobilní aplikace
     contact_missing: Nenastaveno
     contact_unavailable: Neuvedeno
-    documentation: Dokumentace
     hosted_on: Mastodon na doméně %{domain}
-    privacy_policy: Ochrana osobních údajů
-    source_code: Zdrojový kód
-    what_is_mastodon: Co je Mastodon?
+    title: O aplikaci
   accounts:
-    choices_html: 'Volby %{name}:'
-    endorsements_hint: Z webového rozhraní můžete podpořit lidi, které sledujete. Ti se poté zobrazí zde.
-    featured_tags_hint: Můžete vybrat konkrétní hashtagy, které se zobrazí zde.
     follow: Sledovat
     followers:
       few: Sledující
@@ -23,15 +15,9 @@ cs:
       other: Sledujících
     following: Sledovaných
     instance_actor_flash: Tento účet je virtuální aktér, který představuje server samotný, nikoliv jednotlivého uživatele. Používá se pro účely federace a neměl by být pozastaven.
-    joined: Uživatelem od %{date}
     last_active: naposledy aktivní
     link_verified_on: Vlastnictví tohoto odkazu bylo zkontrolováno %{date}
-    media: Média
-    moved_html: 'Uživatel %{name} se přesunul na %{new_profile_link}:'
-    network_hidden: Tato informace není k dispozici
     nothing_here: Nic tu není!
-    people_followed_by: Lidé, které sleduje %{name}
-    people_who_follow: Lidé, kteří sledují %{name}
     pin_errors:
       following: Osobu, kterou chcete podpořit, už musíte sledovat
     posts:
@@ -40,12 +26,6 @@ cs:
       one: Příspěvek
       other: Příspěvků
     posts_tab_heading: Příspěvky
-    posts_with_replies: Příspěvky a odpovědi
-    roles:
-      bot: Robot
-      group: Skupina
-    unavailable: Profil není dostupný
-    unfollow: Přestat sledovat
   admin:
     account_actions:
       action: Vykonat akci
@@ -265,6 +245,7 @@ cs:
         create_unavailable_domain_html: "%{name} zastavil doručování na doménu %{target}"
         demote_user_html: Uživatel %{name} degradoval uživatele %{target}
         destroy_announcement_html: Uživatel %{name} odstranil oznámení %{target}
+        destroy_custom_emoji_html: "%{name} odstranil emoji %{target}"
         destroy_domain_allow_html: Uživatel %{name} zakázal federaci s doménou %{target}
         destroy_domain_block_html: Uživatel %{name} odblokoval doménu %{target}
         destroy_email_domain_block_html: Uživatel %{name} odblokoval e-mailovou doménu %{target}
@@ -272,6 +253,7 @@ cs:
         destroy_ip_block_html: Uživatel %{name} odstranil pravidlo pro IP %{target}
         destroy_status_html: Uživatel %{name} odstranil příspěvek uživatele %{target}
         destroy_unavailable_domain_html: "%{name} obnovil doručování na doménu %{target}"
+        destroy_user_role_html: "%{name} odstranil %{target} roli"
         disable_2fa_user_html: Uživatel %{name} vypnul dvoufázové ověřování pro uživatele %{target}
         disable_custom_emoji_html: Uživatel %{name} zakázal emoji %{target}
         disable_sign_in_token_auth_user_html: Uživatel %{name} zrušil ověřování e-mailovým tokenem pro %{target}
@@ -298,7 +280,9 @@ cs:
         update_announcement_html: Uživatel %{name} aktualizoval oznámení %{target}
         update_custom_emoji_html: Uživatel %{name} aktualizoval emoji %{target}
         update_domain_block_html: "%{name} aktualizoval blokaci domény %{target}"
+        update_ip_block_html: "%{name} změnil pravidlo pro IP %{target}"
         update_status_html: Uživatel %{name} aktualizoval příspěvek uživatele %{target}
+        update_user_role_html: "%{name} změnil %{target} roli"
       empty: Nebyly nalezeny žádné záznamy.
       filter_by_action: Filtrovat podle akce
       filter_by_user: Filtrovat podle uživatele
@@ -342,6 +326,7 @@ cs:
       listed: Uvedeno
       new:
         title: Přidat nové vlastní emoji
+      no_emoji_selected: Žádné emoji nebyly změněny, protože nikdo nebyl vybrán
       not_permitted: K provedené této akce nemáte dostatečná oprávnění
       overwrite: Přepsat
       shortcode: Zkratka
@@ -706,93 +691,63 @@ cs:
       empty: Zatím nebyla definována žádná pravidla serveru.
       title: Pravidla serveru
     settings:
-      activity_api_enabled:
-        desc_html: Počty lokálně publikovaných příspěvků, aktivních uživatelů a nových registrací, v týdenních intervalech
-        title: Publikovat hromadné statistiky o uživatelské aktivitě v API
-      bootstrap_timeline_accounts:
-        desc_html: Více uživatelských jmen oddělte čárkou. U těchto účtů bude zaručeno, že budou vždy zobrazeny mezi doporučenými sledováními
-        title: Doporučit tyto účty novým uživatelům
-      contact_information:
-        email: Pracovní e-mail
-        username: Uživatelské jméno pro kontaktování
-      custom_css:
-        desc_html: Pozměnit vzhled pomocí CSS šablony načítané na každé stránce
-        title: Vlastní CSS
-      default_noindex:
-        desc_html: Ovlivňuje všechny uživatele, kteří toto nastavení sami nezměnili
-        title: Ve výchozím stavu odhlásit uživatele z indexování vyhledávači
+      about:
+        manage_rules: Spravovat pravidla serveru
+        preamble: Uveďte podrobné informace o tom, jak je server provozován, moderován, financován.
+        rules_hint: Existuje vyhrazená oblast pro pravidla, u nichž se očekává, že je budou uživatelé dodržovat.
+        title: O aplikaci
+      appearance:
+        preamble: Přizpůsobte si webové rozhraní Mastodon.
+        title: Vzhled
+      branding:
+        title: Značka
+      content_retention:
+        preamble: Určuje, jak je obsah generovaný uživatelem uložen v Mastodonu.
+        title: Uchovávání obsahu
+      discovery:
+        follow_recommendations: Doporučená sledování
+        preamble: Povrchový zajímavý obsah je užitečný pro zapojení nových uživatelů, kteří možná neznají žádného Mastodona. Mějte pod kontrolou, jak různé objevovací funkce fungují na vašem serveru.
+        profile_directory: Adresář profilů
+        public_timelines: Veřejné časové osy
+        title: Objevujte
+        trends: Trendy
       domain_blocks:
         all: Všem
         disabled: Nikomu
-        title: Zobrazit blokace domén
         users: Přihlášeným místním uživatelům
-      domain_blocks_rationale:
-        title: Zobrazit odůvodnění
-      mascot:
-        desc_html: Zobrazuje se na několika stránkách. Doporučujeme rozlišení alespoň 293x205 px. Pokud toto není nastaveno, bude zobrazen výchozí maskot
-        title: Obrázek maskota
-      peers_api_enabled:
-        desc_html: Domény, na které tento server narazil ve fedivesmíru
-        title: Zveřejnit seznam objevených serverů v API
-      preview_sensitive_media:
-        desc_html: Náhledy odkazů na jiných stránkách budou zobrazeny i pokud jsou media označena jako citlivá
-        title: Zobrazovat v náhledech OpenGraph i citlivá média
-      profile_directory:
-        desc_html: Dovolit uživatelům být objevitelní
-        title: Povolit adresář profilů
       registrations:
-        closed_message:
-          desc_html: Zobrazí se na hlavní stránce, jsou-li registrace uzavřeny. Můžete použít i HTML značky
-          title: Zpráva o uzavřených registracích
-        require_invite_text:
-          desc_html: Když jsou registrace schvalovány ručně, udělat odpověď na otázku "Proč se chcete připojit?" povinnou
-          title: Požadovat od nových uživatelů zdůvodnění založení
+        preamble: Mějte pod kontrolou, kdo může vytvořit účet na vašem serveru.
+        title: Registrace
       registrations_mode:
         modes:
           approved: Pro registraci je vyžadováno schválení
           none: Nikdo se nemůže registrovat
           open: Kdokoliv se může registrovat
-        title: Režim registrací
-      site_description:
-        desc_html: Úvodní odstavec v API. Popište, čím se tento server Mastodon odlišuje od ostatních, a cokoliv jiného, co je důležité. Můžete zde používat HTML značky, hlavně <code>&lt;a&gt;</code> a <code>&lt;em&gt;</code>.
-        title: Popis serveru
-      site_description_extended:
-        desc_html: Dobré místo pro vaše pravidla, pokyny a jiné věci, které váš server odlišují od ostatních. Lze použít HTML značky
-        title: Vlastní rozšířené informace
-      site_short_description:
-        desc_html: Zobrazeno v postranním panelu a meta značkách. V jednom odstavci popište, co je Mastodon a čím se tento server odlišuje od ostatních.
-        title: Krátký popis serveru
-      site_terms:
-        desc_html: Můžete napsat své vlastní zásady ochrany osobních údajů. HTML tagy můžete použít
-        title: Vlastní zásady ochrany osobních údajů
-      site_title: Název serveru
-      thumbnail:
-        desc_html: Používáno pro náhledy přes OpenGraph a API. Doporučujeme rozlišení 1200x630px
-        title: Miniatura serveru
-      timeline_preview:
-        desc_html: Zobrazit na hlavní stránce odkaz na veřejnou časovou osu a povolit přístup na veřejnou časovou osu pomocí API bez autentizace
-        title: Povolit neautentizovaný přístup k časové ose
-      title: Nastavení stránky
-      trendable_by_default:
-        desc_html: Specifický populární obsah může být i nadále výslovně zakázán
-        title: Povolit trendy bez předchozí revize
-      trends:
-        desc_html: Veřejně zobrazit dříve schválený obsah, který je zrovna populární
-        title: Trendy
+      title: Nastavení serveru
     site_uploads:
       delete: Odstranit nahraný soubor
       destroyed_msg: Upload stránky byl úspěšně smazán!
     statuses:
+      account: Autor
       back_to_account: Zpět na stránku účtu
       back_to_report: Zpět na stránku hlášení
       batch:
         remove_from_report: Odebrat z hlášení
         report: Nahlásit
       deleted: Smazáno
+      favourites: Oblíbené
+      history: Historie verzí
+      in_reply_to: Odpověď na
+      language: Jazyk
       media:
         title: Média
+      metadata: Metadata
       no_status_selected: Nebyly změněny žádné příspěvky, neboť žádné nebyly vybrány
+      open: Otevřít příspěvek
+      original_status: Původní příspěvek
+      status_changed: Příspěvek změněn
       title: Příspěvky účtu
+      visibility: Viditelnost
       with_media: S médii
     strikes:
       actions:
@@ -832,6 +787,9 @@ cs:
         description_html: Toto jsou odkazy, které jsou momentálně hojně sdíleny účty, jejichž příspěvky váš server vidí. To může pomoct vašim uživatelům zjistit, co se děje ve světě. Žádné odkazy se nezobrazují veřejně, dokud neschválíte vydavatele. Můžete také povolit nebo zamítnout jednotlivé odkazy.
         disallow: Zakázat odkaz
         disallow_provider: Zakázat vydavatele
+        no_link_selected: Nebyly změněny žádné odkazy, protože nebyl vybrán žádný
+        publishers:
+          no_publisher_selected: Nebyly změněny žádní publikující, protože nikdo nebyl vybrán
         shared_by_over_week:
           few: Sdílený %{count} lidmi za poslední týden
           many: Sdílený %{count} lidmi za poslední týden
@@ -853,6 +811,7 @@ cs:
         description_html: Toto jsou příspěvky, o kterých váš server ví, že jsou momentálně hodně sdíleny a oblibovány. To může pomoci vašim novým i vracejícím se uživatelům najít další lidi ke sledování. Žádné příspěvky se nezobrazují veřejně, dokud neschválíte autora a tento autor nepovolí navrhování svého účtu ostatním. Můžete také povolit či zamítnout jednotlivé příspěvky.
         disallow: Zakázat příspěvek
         disallow_account: Zakázat autora
+        no_status_selected: Nebyly změněny žádné populární příspěvky, protože nikdo nebyl vybrán
         not_discoverable: Autor nepovolil navrhování svého účtu ostatním
         shared_by:
           few: "%{friendly_count} sdílení nebo oblíbení"
@@ -870,6 +829,7 @@ cs:
           tag_uses_measure: použití celkem
         description_html: Toto jsou hashtagy, které se momentálně objevují v mnoha příspěvcích, které váš server vidí. To může pomoci vašim uživatelům zjistit, o čem lidé zrovna nejvíce mluví. Žádné hashtagy se nezobrazují veřejně, dokud je neschválíte.
         listable: Může být navrhován
+        no_tag_selected: Nebyly změněny žádné štítky, protože nikdo nebyl vybrán
         not_listable: Nebude navrhován
         not_trendable: Neobjeví se mezi populárními
         not_usable: Nemůže být používán
@@ -979,6 +939,7 @@ cs:
     warning: Zacházejte s těmito daty opatrně. Nikdy je s nikým nesdílejte!
     your_token: Váš přístupový token
   auth:
+    apply_for_account: Přejít na čekací frontu
     change_password: Heslo
     delete_account: Odstranit účet
     delete_account_html: Chcete-li odstranit svůj účet, <a href="%{path}">pokračujte zde</a>. Budete požádáni o potvrzení.
@@ -1196,9 +1157,6 @@ cs:
         hint: Tento filtr se vztahuje na výběr jednotlivých příspěvků bez ohledu na jiná kritéria. Do tohoto filtru můžete přidat více příspěvků z webového rozhraní.
         title: Filtrované příspěvky
   footer:
-    developers: Vývojáři
-    more: Více…
-    resources: Zdroje
     trending_now: Právě populární
   generic:
     all: Všechny
@@ -1234,7 +1192,6 @@ cs:
       following: Seznam sledovaných
       muting: Seznam ignorovaných
     upload: Nahrát
-  in_memoriam_html: In Memoriam.
   invites:
     delete: Deaktivovat
     expired: Expirováno
@@ -1315,6 +1272,8 @@ cs:
     carry_blocks_over_text: Tento účet se přesunul z %{acct}, který jste blokovali.
     carry_mutes_over_text: Tento účet se přesunul z %{acct}, který jste skryli.
     copy_account_note_text: 'Tento účet se přesunul z %{acct}, zde byly Vaše předchozí poznámky o něm:'
+  navigation:
+    toggle_menu: Přepnout menu
   notification_mailer:
     admin:
       report:
@@ -1416,22 +1375,7 @@ cs:
     remove_selected_follows: Přestat sledovat vybrané uživatele
     status: Stav účtu
   remote_follow:
-    acct: Napište svou přezdívku@doménu, ze které chcete jednat
     missing_resource: Nemůžeme najít požadovanou přesměrovávací URL adresu pro váš účet
-    no_account_html: Ještě nemáte účet? Tady se můžete <a href='%{sign_up_path}' target='_blank'>zaregistrovat</a>
-    proceed: Pokračovat ke sledování
-    prompt: 'Budete sledovat:'
-    reason_html: "<strong>Proč je tento krok nutný?</strong> <code>%{instance}</code> nemusí být serverem, na kterém jste registrováni, a proto vás musíme nejdříve přesměrovat na váš domovský server."
-  remote_interaction:
-    favourite:
-      proceed: Pokračovat k oblíbení
-      prompt: 'Chcete si oblíbit tento příspěvek:'
-    reblog:
-      proceed: Pokračovat k boostnutí
-      prompt: 'Chcete boostnout tento příspěvek:'
-    reply:
-      proceed: Pokračovat k odpovědi
-      prompt: 'Chcete odpovědět na tento příspěvek:'
   reports:
     errors:
       invalid_rules: neodkazuje na platná pravidla

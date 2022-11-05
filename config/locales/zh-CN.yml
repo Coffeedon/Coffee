@@ -2,44 +2,24 @@
 zh-CN:
   about:
     about_mastodon_html: Mastodon 是一个建立在开放式网络协议和自由、开源软件之上的社交网络，有着类似于电子邮件的分布式设计。
-    api: API
-    apps: 移动应用
     contact_missing: 未设定
     contact_unavailable: 未公开
-    documentation: 文档
     hosted_on: 运行在 %{domain} 上的 Mastodon 站点
-    privacy_policy: 隐私政策
-    source_code: 源码
-    what_is_mastodon: Mastodon 是什么？
+    title: 关于本站
   accounts:
-    choices_html: "%{name} 的推荐："
-    endorsements_hint: 你可以在 web 界面上推荐你关注的人，他们会显示在这里。
-    featured_tags_hint: 你可以精选一些话题标签展示在这里。
     follow: 关注
     followers:
       other: 关注者
     following: 正在关注
     instance_actor_flash: 该账号用来代表虚拟角色，并不代表个人用户，仅代表服务器本身。该账号用于达成互联之目的，不应该被停用。
-    joined: 加入于 %{date}
     last_active: 最近活动
     link_verified_on: 此链接的所有权已在 %{date} 检查
-    media: 媒体
-    moved_html: "%{name} 已经迁移到 %{new_profile_link}："
-    network_hidden: 此信息不可用
     nothing_here: 这里什么都没有！
-    people_followed_by: "%{name} 关注的人"
-    people_who_follow: 关注 %{name} 的人
     pin_errors:
       following: 你必须关注你要推荐的人
     posts:
       other: 嘟文
     posts_tab_heading: 嘟文
-    posts_with_replies: 嘟文和回复
-    roles:
-      bot: 机器人
-      group: 群组
-    unavailable: 个人资料不可用
-    unfollow: 取消关注
   admin:
     account_actions:
       action: 执行操作
@@ -224,6 +204,7 @@ zh-CN:
         reject_user: 拒绝用户
         remove_avatar_user: 移除头像
         reopen_report: 重开举报
+        resend_user: 重新发送确认电子邮件
         reset_password_user: 重置密码
         resolve_report: 处理举报
         sensitive_account: 将你账号中的媒体标记为敏感内容
@@ -282,6 +263,7 @@ zh-CN:
         reject_user_html: "%{name} 拒绝了用户 %{target} 的注册"
         remove_avatar_user_html: "%{name} 删除了 %{target} 的头像"
         reopen_report_html: "%{name} 重开了举报 %{target}"
+        resend_user_html: "%{name} 给 %{target} 发送了重新确认电子邮件"
         reset_password_user_html: "%{name} 重置了用户 %{target} 的密码"
         resolve_report_html: "%{name} 处理了举报 %{target}"
         sensitive_account_html: "%{name} 将 %{target} 的媒体标记为敏感内容"
@@ -341,6 +323,7 @@ zh-CN:
       listed: 已显示
       new:
         title: 添加新的自定义表情
+      no_emoji_selected: 因为没有选中任何表情，所以没有更改
       not_permitted: 你没有权限进行此操作
       overwrite: 覆盖
       shortcode: 短代码
@@ -672,93 +655,67 @@ zh-CN:
       empty: 尚未定义服务器规则。
       title: 实例规则
     settings:
-      activity_api_enabled:
-        desc_html: 本站一周内的嘟文数、活跃用户数以及新用户数
-        title: 公开用户活跃度的统计数据
-      bootstrap_timeline_accounts:
-        desc_html: 用半角逗号分隔多个用户名。这些账户一定会在推荐关注中展示。
-        title: 新用户推荐关注
-      contact_information:
-        email: 用于联系的公开电子邮件地址
-        username: 用于联系的公开用户名
-      custom_css:
-        desc_html: 通过 CSS 代码调整所有页面的显示效果
-        title: 自定义 CSS
-      default_noindex:
-        desc_html: 影响所有尚未更改此设置的用户
-        title: 默认不让用户被搜索引擎索引
+      about:
+        manage_rules: 管理服务器规则
+        preamble: 提供此服务器如何运营、资金状况等的深入信息。
+        rules_hint: 有一个专门区域用于显示用户需要遵守的规则。
+        title: 关于本站
+      appearance:
+        preamble: 自定义 Mastodon 的网页界面。
+        title: 外观
+      branding:
+        preamble: 你的服务器与网络中其他服务器的招牌区别。此信息将可能在多种环境下显示，包括 Mastodon 网页界面、原生应用和其他网站的链接预览等。因此应尽量简明扼要。
+        title: 招牌
+      content_retention:
+        preamble: 控制用户生成的内容在 Mastodon 中如何存储。
+        title: 内容保留
+      discovery:
+        follow_recommendations: 关注推荐
+        preamble: 露出有趣的内容有助于新加入 Mastodon 的用户融入。可在这里控制多种发现功能如何在你的服务器上工作。
+        profile_directory: 个人资料目录
+        public_timelines: 公共时间轴
+        title: 发现
+        trends: 流行趋势
       domain_blocks:
         all: 对所有人
         disabled: 不对任何人
-        title: 查看域名屏蔽
         users: 对本地已登录用户
-      domain_blocks_rationale:
-        title: 显示理由
-      mascot:
-        desc_html: 用于在首页展示。推荐分辨率 293×205px 以上。未指定的情况下将使用默认吉祥物。
-        title: 吉祥物图像
-      peers_api_enabled:
-        desc_html: 截至目前本服务器在联邦宇宙中已发现的域名
-        title: 公开已知实例的列表
-      preview_sensitive_media:
-        desc_html: 无论媒体文件是否标记为敏感内容，站外链接预览始终呈现为缩略图。
-        title: 在 OpenGraph 预览中显示敏感媒体内容
-      profile_directory:
-        desc_html: 允许用户被发现
-        title: 启用用户目录
       registrations:
-        closed_message:
-          desc_html: 本站关闭注册期间的提示信息。可以使用 HTML 标签
-          title: 关闭注册时的提示信息
-        require_invite_text:
-          desc_html: 当注册需要手动批准时，将“你为什么想要加入？”设为必填项
-          title: 要求新用户填写申请注册的原因
+        preamble: 控制谁可以在你的服务器上创建账号。
+        title: 注册
       registrations_mode:
         modes:
           approved: 注册时需要批准
           none: 关闭注册
           open: 开放注册
-        title: 注册模式
-      site_description:
-        desc_html: 首页上的介绍文字。 描述一下本 Mastodon 实例的特殊之处以及其他重要信息。可以使用 HTML 标签，包括 <code>&lt;a&gt;</code> 和 <code>&lt;em&gt;</code> 。
-        title: 本站简介
-      site_description_extended:
-        desc_html: 可以填写行为守则、规定、指南或其他本站特有的内容。可以使用 HTML 标签
-        title: 本站详细介绍
-      site_short_description:
-        desc_html: 会在在侧栏和元数据标签中显示。可以用一小段话描述 Mastodon 是什么，以及本服务器的特点。
-        title: 服务器一句话介绍
-      site_terms:
-        desc_html: 您可以写自己的隐私政策。您可以使用 HTML 标签
-        title: 自定义隐私政策
-      site_title: 本站名称
-      thumbnail:
-        desc_html: 用于在 OpenGraph 和 API 中显示预览图。推荐分辨率 1200×630px
-        title: 本站缩略图
-      timeline_preview:
-        desc_html: 在主页显示公共时间轴
-        title: 时间轴预览
-      title: 网站设置
-      trendable_by_default:
-        desc_html: 特定的热门内容仍可以被明确地禁止
-        title: 允许在未审查的情况下将话题置为热门
-      trends:
-        desc_html: 公开显示先前已通过审核的当前热门话题
-        title: 热门标签
+      title: 服务器设置
     site_uploads:
       delete: 删除已上传的文件
       destroyed_msg: 站点上传的文件已经成功删除！
     statuses:
+      account: 作者
+      application: 应用
       back_to_account: 返回帐户信息页
       back_to_report: 返回举报页
       batch:
         remove_from_report: 从报告中移除
         report: 举报
       deleted: 已删除
+      favourites: 收藏
+      history: 版本历史记录
+      in_reply_to: 回复给
+      language: 语言
       media:
         title: 媒体文件
+      metadata: 元数据
       no_status_selected: 因为没有嘟文被选中，所以没有更改
+      open: 展开嘟文
+      original_status: 原始嘟文
+      reblogs: 转发
+      status_changed: 嘟文已编辑
       title: 帐户嘟文
+      trending: 当前热门
+      visibility: 可见性
       with_media: 含有媒体文件
     strikes:
       actions:
@@ -798,6 +755,9 @@ zh-CN:
         description_html: 这些是当前此服务器可见账号的嘟文中被大量分享的链接。它可以帮助用户了解正在发生的事情。发布者获得批准前不会公开显示任何链接。你也可以批准或拒绝个别链接。
         disallow: 不允许链接
         disallow_provider: 不允许发布者
+        no_link_selected: 因为没有选中任何链接，所以没有更改
+        publishers:
+          no_publisher_selected: 因为没有选中任何发布者，所以没有更改
         shared_by_over_week:
           other: 过去一周内被 %{count} 个人分享过
         title: 热门链接
@@ -816,6 +776,7 @@ zh-CN:
         description_html: 这些是当前此服务器可见的被大量分享和喜欢的嘟文。这些嘟文可以帮助新老用户找到更多可关注的账号。批准发布者且发布者允许将其账号推荐给其他用户前，不会公开显示任何嘟文。你也可以批准或拒绝个别嘟文。
         disallow: 禁止嘟文
         disallow_account: 禁止发布者
+        no_status_selected: 因为没有选中任何热门嘟文，所以没有更改
         not_discoverable: 发布者选择不被发现
         shared_by:
           other: 被分享和喜欢%{friendly_count}次
@@ -830,6 +791,7 @@ zh-CN:
           tag_uses_measure: 总使用
         description_html: 这些是当前此服务器可见嘟文中大量出现的标签。它可以帮助用户发现其他人正关注的话题。在获得批准前不会公开显示任何标签。
         listable: 可被推荐
+        no_tag_selected: 因为没有选中任何标签，所以没有更改
         not_listable: 不会被推荐
         not_trendable: 不会出现在热门列表中
         not_usable: 不可使用
@@ -1148,9 +1110,6 @@ zh-CN:
         hint: 无论其他条件如何，此过滤器适用于选用个别嘟文。你可以从网页界面中向此过滤器加入更多嘟文。
         title: 过滤的嘟文
   footer:
-    developers: 开发者
-    more: 更多…
-    resources: 资源
     trending_now: 现在流行
   generic:
     all: 全部
@@ -1189,7 +1148,6 @@ zh-CN:
       following: 关注列表
       muting: 隐藏列表
     upload: 上传
-  in_memoriam_html: 谨此悼念。
   invites:
     delete: 停用
     expired: 已失效
@@ -1267,6 +1225,8 @@ zh-CN:
     carry_blocks_over_text: 这个用户迁移自你屏蔽过的 %{acct}
     carry_mutes_over_text: 这个用户迁移自你隐藏过的 %{acct}
     copy_account_note_text: 这个用户迁移自 %{acct}，你曾为其添加备注：
+  navigation:
+    toggle_menu: 切换菜单
   notification_mailer:
     admin:
       report:
@@ -1344,6 +1304,8 @@ zh-CN:
     other: 其他
     posting_defaults: 发布默认值
     public_timelines: 公共时间轴
+  privacy_policy:
+    title: 隐私政策
   reactions:
     errors:
       limit_reached: 互动种类的限制
@@ -1366,22 +1328,7 @@ zh-CN:
     remove_selected_follows: 取消关注所选用户
     status: 帐户状态
   remote_follow:
-    acct: 请输入你的“用户名@实例域名”
     missing_resource: 无法确定你的帐户的跳转 URL
-    no_account_html: 还没有账号？你可以<a href='%{sign_up_path}' target='_blank'>注册一个</a>
-    proceed: 确认关注
-    prompt: 你正准备关注：
-    reason_html: "<strong>为什么需要这个步骤？</strong> <code>%{instance}</code> 可能不是你所注册的服务器，所以我们需要先跳转到你所在的服务器。"
-  remote_interaction:
-    favourite:
-      proceed: 确认标记为喜欢
-      prompt: 你想要标记此嘟文为喜欢：
-    reblog:
-      proceed: 确认转嘟
-      prompt: 你想要转嘟此条：
-    reply:
-      proceed: 确认回复
-      prompt: 你想要回复此嘟文：
   reports:
     errors:
       invalid_rules: 没有引用有效的规则

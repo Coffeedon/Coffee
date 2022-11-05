@@ -94,6 +94,7 @@ class About extends React.PureComponent {
     }),
     dispatch: PropTypes.func.isRequired,
     intl: PropTypes.object.isRequired,
+    multiColumn: PropTypes.bool,
   };
 
   componentDidMount () {
@@ -108,11 +109,11 @@ class About extends React.PureComponent {
   }
 
   render () {
-    const { intl, server, extendedDescription, domainBlocks } = this.props;
+    const { multiColumn, intl, server, extendedDescription, domainBlocks } = this.props;
     const isLoading = server.get('isLoading');
 
     return (
-      <Column>
+      <Column bindToDocument={!multiColumn} label={intl.formatMessage(messages.title)}>
         <div className='scrollable about'>
           <div className='about__header'>
             <Image blurhash={server.getIn(['thumbnail', 'blurhash'])} src={server.getIn(['thumbnail', 'url'])} srcSet={server.getIn(['thumbnail', 'versions'])?.map((value, key) => `${value} ${key.replace('@', '')}`).join(', ')} className='about__header__hero' />
@@ -124,7 +125,7 @@ class About extends React.PureComponent {
             <div className='about__meta__column'>
               <h4><FormattedMessage id='server_banner.administered_by' defaultMessage='Administered by:' /></h4>
 
-              <Account id={server.getIn(['contact', 'account', 'id'])} />
+              <Account id={server.getIn(['contact', 'account', 'id'])} size={36} />
             </div>
 
             <hr className='about__meta__divider' />
@@ -208,10 +209,15 @@ class About extends React.PureComponent {
           </Section>
 
           <LinkFooter />
+
+          <div className='about__footer'>
+            <p><FormattedMessage id='about.disclaimer' defaultMessage='Mastodon is free, open-source software, and a trademark of Mastodon gGmbH.' /></p>
+          </div>
         </div>
 
         <Helmet>
           <title>{intl.formatMessage(messages.title)}</title>
+          <meta name='robots' content='all' />
         </Helmet>
       </Column>
     );

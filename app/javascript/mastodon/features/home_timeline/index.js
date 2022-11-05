@@ -20,7 +20,7 @@ const messages = defineMessages({
   title: { id: 'column.home', defaultMessage: 'Home' },
   show_announcements: { id: 'home.show_announcements', defaultMessage: 'Show announcements' },
   hide_announcements: { id: 'home.hide_announcements', defaultMessage: 'Hide announcements' },
-});  
+});
 
 const mapStateToProps = state => ({
   hasUnread: state.getIn(['timelines', 'home', 'unread']) > 0,
@@ -126,6 +126,7 @@ class HomeTimeline extends React.PureComponent {
     if (hasAnnouncements) {
       announcementsButton = (
         <button
+          type='button'
           className={classNames('column-header__button', { 'active': showAnnouncements })}
           title={intl.formatMessage(showAnnouncements ? messages.hide_announcements : messages.show_announcements)}
           aria-label={intl.formatMessage(showAnnouncements ? messages.hide_announcements : messages.show_announcements)}
@@ -167,6 +168,7 @@ class HomeTimeline extends React.PureComponent {
 
         <Helmet>
           <title>{intl.formatMessage(messages.title)}</title>
+          <meta name='robots' content='noindex' />
         </Helmet>
       </Column>
     );

@@ -1,10 +1,7 @@
 ---
 br:
   about:
-    api: API
-    apps: Arloadoù pellgomz
-    source_code: Boneg tarzh
-    what_is_mastodon: Petra eo Mastodon?
+    title: Diwar-benn
   accounts:
     follow: Heuliañ
     followers:
@@ -13,8 +10,9 @@ br:
       one: Heulier·ez
       other: Heulier·ez
       two: Heulier·ez
-    following: O heuliañ
-    media: Media
+    following: Koumanantoù
+    last_active: oberiantiz ziwezhañ
+    nothing_here: N'eus netra amañ !
     posts:
       few: Toud
       many: Toud
@@ -22,17 +20,15 @@ br:
       other: Toud
       two: Toud
     posts_tab_heading: Toudoù
-    posts_with_replies: Toudoù ha respontoù
-    roles:
-      bot: Robot
-      group: Strollad
-    unavailable: Profil dihegerz
-    unfollow: Diheuliañ
   admin:
     accounts:
+      add_email_domain_block: Stankañ an domani postel
+      approve: Aprouiñ
+      are_you_sure: Ha sur oc'h?
       avatar: Avatar
       by_domain: Domani
       change_email:
+        changed_msg: Chomlec'h postel kemmet !
         current_email: Postel bremanel
         label: Kemm ar postel
         new_email: Postel nevez
@@ -128,8 +124,6 @@ br:
     settings:
       domain_blocks:
         all: D'an holl dud
-      site_title: Anv ar servijer
-      title: Arventennoù al lec'hienn
     statuses:
       deleted: Dilamet
     warning_presets:
@@ -154,7 +148,7 @@ br:
     invalid_password: Ger-tremen diwiriek
   date:
     formats:
-      default: "%d %b %Y"
+      default: "%d a viz %b %Y"
       with_month_name: "%d a viz %B %Y"
   datetime:
     distance_in_words:
@@ -193,9 +187,6 @@ br:
     index:
       delete: Dilemel
       title: Siloù
-  footer:
-    developers: Diorroerien
-    more: Muioc'h…
   generic:
     all: Pep tra
     copy: Eilañ
@@ -272,7 +263,9 @@ br:
     mastodon-light: Mastodoñ (Sklaer)
   time:
     formats:
-      default: "%He%M, %d %b %Y"
+      default: "%d a viz %b %Y, %H:%M"
+      month: Miz %b %Y
+      time: "%H:%M"
   two_factor_authentication:
     add: Ouzhpennañ
     disable: Diweredekaat

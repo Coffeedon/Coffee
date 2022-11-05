@@ -2,45 +2,25 @@
 'no':
   about:
     about_mastodon_html: Mastodon er et sosialt nettverk laget med <em>fri programvare</em>. Et <em>desentralisert</em> alternativ til kommersielle plattformer. Slik kan det unngå risikoene ved å ha et enkelt selskap som monopoliserer din kommunikasjon. Velg en tjener du stoler på &mdash; uansett hvilken du velger så kan du kommunisere med alle andre. Alle kan kjøre sin egen Mastodon og delta sømløst i det sosiale nettverket.
-    api: API
-    apps: Mobilapper
     contact_missing: Ikke innstilt
     contact_unavailable: Ikke tilgjengelig
-    documentation: Dokumentasjon
     hosted_on: Mastodon driftet på %{domain}
-    source_code: Kildekode
-    what_is_mastodon: Hva er Mastodon?
   accounts:
-    choices_html: "%{name} sine anbefalte:"
-    endorsements_hint: Du kan fremheve personer du følger fra nettgrensesnittet som deretter vil bli vist her.
-    featured_tags_hint: Du kan fremheve spesifikke emneknagger som vil bli vist her.
     follow: Følg
     followers:
       one: Følger
       other: Følgere
     following: Følger
     instance_actor_flash: Denne kontoen er en virtuell figur som brukes til å representere selve serveren og ikke noen individuell bruker. Den brukes til forbundsformål og bør ikke oppheves.
-    joined: Ble med den %{date}
     last_active: sist aktiv
     link_verified_on: Eierskap av denne lenken ble sjekket %{date}
-    media: Media
-    moved_html: "%{name} har flyttet til %{new_profile_link}:"
-    network_hidden: Denne informasjonen er ikke tilgjengelig
     nothing_here: Det er ingenting her!
-    people_followed_by: Folk som %{name} følger
-    people_who_follow: Folk som følger %{name}
     pin_errors:
       following: Du må allerede følge personen du vil fremheve
     posts:
       one: Tut
       other: Tuter
     posts_tab_heading: Tuter
-    posts_with_replies: Tuter med svar
-    roles:
-      bot: Bot
-      group: Gruppe
-    unavailable: Profilen er utilgjengelig
-    unfollow: Slutt å følge
   admin:
     account_actions:
       action: Utfør handling
@@ -190,6 +170,7 @@
         reject_user: Avvis bruker
         remove_avatar_user: Fjern Avatar
         reopen_report: Gjenåpne rapporten
+        resend_user: Send e-post med bekreftelse på nytt
         reset_password_user: Tilbakestill passord
         resolve_report: Løs rapport
         silence_account: Demp konto
@@ -435,72 +416,15 @@
       empty: Ingen serverregler har blitt definert ennå.
       title: Server regler
     settings:
-      activity_api_enabled:
-        desc_html: Antall lokale statusposter, aktive brukere og nye registreringer i ukentlige oppdelinger
-        title: Publiser samlet statistikk om brukeraktiviteter
-      bootstrap_timeline_accounts:
-        desc_html: Separer flere brukernavn med komma. Kun lokale og ulåste kontoer vil kunne brukes. Dersom tomt er standarden alle lokale administratorer.
-        title: Standard følgere for nye brukere
-      contact_information:
-        email: Skriv en offentlig e-postadresse
-        username: Skriv brukernavn
-      custom_css:
-        desc_html: Modifiser utseendet med CSS lastet på hver side
-        title: Egendefinert CSS
-      default_noindex:
-        desc_html: Påvirker alle brukerne som ikke har justert denne innstillingen selv
-        title: Velg brukere som er ute av søkemotoren indeksering som standard
       domain_blocks:
         all: Til alle
         disabled: Til ingen
-        title: Vis domeneblokkeringer
         users: Til lokale brukere som er logget inn
-      domain_blocks_rationale:
-        title: Vis grunnlaget
-      mascot:
-        desc_html: Vist på flere sider. Minst 293×205px er anbefalt. Dersom det ikke er valgt, faller det tilbake til standardmaskoten
-        title: Maskotbilde
-      peers_api_enabled:
-        desc_html: Domenenavn denne instansen har truffet på i fediverset
-        title: Publiser liste over oppdagede instanser
-      preview_sensitive_media:
-        desc_html: Lenkeforhåndsvisninger på andre nettsteder vil vise et miniatyrbilde selv dersom mediet er merket som sensitivt
-        title: Vis sensitive medier i OpenGraph-forhåndsvisninger
-      profile_directory:
-        desc_html: Tillat brukere å bli oppdagelige
-        title: Skru på profilmappen
-      registrations:
-        closed_message:
-          desc_html: Vises på forsiden når registreringer er lukket<br>Du kan bruke HTML-tagger
-          title: Melding for lukket registrering
-        require_invite_text:
-          desc_html: Når registreringer krever manuell godkjenning, må du føye «Hvorfor vil du bli med?» tekstinput obligatoriske i stedet for valgfritt
-          title: Krev nye brukere for å oppgi en grunn for å delta
       registrations_mode:
         modes:
           approved: Godkjenning kreves for påmelding
           none: Ingen kan melde seg inn
           open: Hvem som helst kan melde seg inn
-        title: Registreringsmodus
-      site_description:
-        desc_html: Vises som et avsnitt på forsiden og brukes som en meta-tagg. Du kan bruke HTML-tagger, spesielt <code>&lt;a&gt;</code> og <code>&lt;em&gt;</code>.
-        title: Nettstedsbeskrivelse
-      site_description_extended:
-        desc_html: Vises på side for utvidet informasjon.<br>Du kan bruke HTML-tagger
-        title: Utvidet nettstedsinformasjon
-      site_short_description:
-        desc_html: Vist i sidelinjen og i metastempler. Beskriv hva Mastodon er og hva som gjør denne tjeneren spesiell i én enkelt paragraf.
-        title: Kort tjenerbeskrivelse
-      site_title: Nettstedstittel
-      thumbnail:
-        desc_html: Brukes ved forhandsvisning via OpenGraph og API. 1200x630px anbefales
-        title: Miniatyrbilde for instans
-      timeline_preview:
-        desc_html: Vis offentlig tidslinje på landingssiden
-        title: Forhandsvis tidslinjen
-      title: Nettstedsinnstillinger
-      trends:
-        title: Trendende emneknagger
     site_uploads:
       delete: Slett den opplastede filen
       destroyed_msg: Vellykket sletting av sideopplasting!
@@ -705,9 +629,6 @@
     new:
       title: Legg til nytt filter
   footer:
-    developers: Utviklere
-    more: Mer…
-    resources: Ressurser
     trending_now: Trender nå
   generic:
     all: Alle
@@ -733,7 +654,6 @@
       following: Følgeliste
       muting: Dempeliste
     upload: Opplastning
-  in_memoriam_html: Til minne.
   invites:
     delete: Deaktiver
     expired: Utløpt
@@ -894,22 +814,7 @@
     remove_selected_follows: Avfølg de valgte brukerne
     status: Kontostatus
   remote_follow:
-    acct: Tast inn brukernavn@domene som du vil følge fra
     missing_resource: Kunne ikke finne URLen for din konto
-    no_account_html: Har du ikke en konto? Da kan du <a href='%{sign_up_path}' target='_blank'>lage en konto her</a>
-    proceed: Fortsett med følging
-    prompt: 'Du vil følge:'
-    reason_html: "<strong>Hvorfor dette trinnet er nødvendig?</strong><code>%{instance}</code> er kanskje ikke tjeneren som du er registrert på, så vi må omdirigere deg til hjemmetjeneren din først."
-  remote_interaction:
-    favourite:
-      proceed: Fortsett til likingen
-      prompt: 'Du ønsker å like denne tuten:'
-    reblog:
-      proceed: Fortsett til fremhevingen
-      prompt: 'Du ønsker å fremheve denne tuten:'
-    reply:
-      proceed: Fortsett til svaret
-      prompt: 'Du ønsker å svare på denne tuten:'
   scheduled_statuses:
     over_daily_limit: Du har overskredet grensen på %{limit} planlagte tuter for den dagen
     over_total_limit: Du har overskredet grensen på %{limit} planlagte tuter

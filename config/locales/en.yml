@@ -2,47 +2,26 @@
 en:
   about:
     about_mastodon_html: 'The social network of the future: No ads, no corporate surveillance, ethical design, and decentralization! Own your data with Mastodon!'
-    api: API
-    apps: Mobile apps
     contact_missing: Not set
     contact_unavailable: N/A
-    documentation: Documentation
     hosted_on: Mastodon hosted on %{domain}
-    privacy_policy: Privacy Policy
-    source_code: Source code
     title: About
-    what_is_mastodon: What is Mastodon?
   accounts:
-    choices_html: "%{name}'s choices:"
-    endorsements_hint: You can endorse people you follow from the web interface, and they will show up here.
-    featured_tags_hint: You can feature specific hashtags that will be displayed here.
     follow: Follow
     followers:
       one: Follower
       other: Followers
     following: Following
     instance_actor_flash: This account is a virtual actor used to represent the server itself and not any individual user. It is used for federation purposes and should not be suspended.
-    joined: Joined %{date}
     last_active: last active
     link_verified_on: Ownership of this link was checked on %{date}
-    media: Media
-    moved_html: "%{name} has moved to %{new_profile_link}:"
-    network_hidden: This information is not available
     nothing_here: There is nothing here!
-    people_followed_by: People whom %{name} follows
-    people_who_follow: People who follow %{name}
     pin_errors:
       following: You must be already following the person you want to endorse
     posts:
       one: Post
       other: Posts
     posts_tab_heading: Posts
-    posts_with_replies: Posts and replies
-    roles:
-      bot: Bot
-      group: Group
-    unavailable: Profile unavailable
-    unfollow: Unfollow
   admin:
     account_actions:
       action: Perform action
@@ -228,6 +207,7 @@ en:
         reject_user: Reject User
         remove_avatar_user: Remove Avatar
         reopen_report: Reopen Report
+        resend_user: Resend Confirmation Mail
         reset_password_user: Reset Password
         resolve_report: Resolve Report
         sensitive_account: Force-Sensitive Account
@@ -286,6 +266,7 @@ en:
         reject_user_html: "%{name} rejected sign-up from %{target}"
         remove_avatar_user_html: "%{name} removed %{target}'s avatar"
         reopen_report_html: "%{name} reopened report %{target}"
+        resend_user_html: "%{name} resent confirmation e-mail for %{target}"
         reset_password_user_html: "%{name} reset password of user %{target}"
         resolve_report_html: "%{name} resolved report %{target}"
         sensitive_account_html: "%{name} marked %{target}'s media as sensitive"
@@ -688,93 +669,67 @@ en:
       empty: No server rules have been defined yet.
       title: Server rules
     settings:
-      activity_api_enabled:
-        desc_html: Counts of locally published posts, active users, and new registrations in weekly buckets
-        title: Publish aggregate statistics about user activity in the API
-      bootstrap_timeline_accounts:
-        desc_html: Separate multiple usernames by comma. These accounts will be guaranteed to be shown in follow recommendations
-        title: Recommend these accounts to new users
-      contact_information:
-        email: Business e-mail
-        username: Contact username
-      custom_css:
-        desc_html: Modify the look with CSS loaded on every page
-        title: Custom CSS
-      default_noindex:
-        desc_html: Affects all users who have not changed this setting themselves
-        title: Opt users out of search engine indexing by default
+      about:
+        manage_rules: Manage server rules
+        preamble: Provide in-depth information about how the server is operated, moderated, funded.
+        rules_hint: There is a dedicated area for rules that your users are expected to adhere to.
+        title: About
+      appearance:
+        preamble: Customize Mastodon's web interface.
+        title: Appearance
+      branding:
+        preamble: Your server's branding differentiates it from other servers in the network. This information may be displayed across a variety of environments, such as Mastodon's web interface, native applications, in link previews on other websites and within messaging apps, and so on. For this reason, it is best to keep this information clear, short and concise.
+        title: Branding
+      content_retention:
+        preamble: Control how user-generated content is stored in Mastodon.
+        title: Content retention
+      discovery:
+        follow_recommendations: Follow recommendations
+        preamble: Surfacing interesting content is instrumental in onboarding new users who may not know anyone Mastodon. Control how various discovery features work on your server.
+        profile_directory: Profile directory
+        public_timelines: Public timelines
+        title: Discovery
+        trends: Trends
       domain_blocks:
         all: To everyone
         disabled: To no one
-        title: Show domain blocks
         users: To logged-in local users
-      domain_blocks_rationale:
-        title: Show rationale
-      mascot:
-        desc_html: Displayed on multiple pages. At least 293×205px recommended. When not set, falls back to default mascot
-        title: Mascot image
-      peers_api_enabled:
-        desc_html: Domain names this server has encountered in the fediverse
-        title: Publish list of discovered servers in the API
-      preview_sensitive_media:
-        desc_html: Link previews on other websites will display a thumbnail even if the media is marked as sensitive
-        title: Show sensitive media in OpenGraph previews
-      profile_directory:
-        desc_html: Allow users to be discoverable
-        title: Enable profile directory
       registrations:
-        closed_message:
-          desc_html: Displayed on frontpage when registrations are closed. You can use HTML tags
-          title: Closed registration message
-        require_invite_text:
-          desc_html: When registrations require manual approval, make the “Why do you want to join?” text input mandatory rather than optional
-          title: Require new users to enter a reason to join
+        preamble: Control who can create an account on your server.
+        title: Registrations
       registrations_mode:
         modes:
           approved: Approval required for sign up
           none: Nobody can sign up
           open: Anyone can sign up
-        title: Registrations mode
-      site_description:
-        desc_html: Introductory paragraph on the API. Describe what makes this Mastodon server special and anything else important. You can use HTML tags, in particular <code>&lt;a&gt;</code> and <code>&lt;em&gt;</code>.
-        title: Server description
-      site_description_extended:
-        desc_html: A good place for your code of conduct, rules, guidelines and other things that set your server apart. You can use HTML tags
-        title: Custom extended information
-      site_short_description:
-        desc_html: Displayed in sidebar and meta tags. Describe what Mastodon is and what makes this server special in a single paragraph.
-        title: Short server description
-      site_terms:
-        desc_html: You can write your own privacy policy. You can use HTML tags
-        title: Custom privacy policy
-      site_title: Server name
-      thumbnail:
-        desc_html: Used for previews via OpenGraph and API. 1200x630px recommended
-        title: Server thumbnail
-      timeline_preview:
-        desc_html: Display link to public timeline on landing page and allow API access to the public timeline without authentication
-        title: Allow unauthenticated access to public timeline
-      title: Site settings
-      trendable_by_default:
-        desc_html: Specific trending content can still be explicitly disallowed
-        title: Allow trends without prior review
-      trends:
-        desc_html: Publicly display previously reviewed content that is currently trending
-        title: Trends
+      title: Server Settings
     site_uploads:
       delete: Delete uploaded file
       destroyed_msg: Site upload successfully deleted!
     statuses:
+      account: Author
+      application: Application
       back_to_account: Back to account page
       back_to_report: Back to report page
       batch:
         remove_from_report: Remove from report
         report: Report
       deleted: Deleted
+      favourites: Favourites
+      history: Version history
+      in_reply_to: Replying to
+      language: Language
       media:
         title: Media
+      metadata: Metadata
       no_status_selected: No posts were changed as none were selected
+      open: Open post
+      original_status: Original post
+      reblogs: Reblogs
+      status_changed: Post changed
       title: Account posts
+      trending: Trending
+      visibility: Visibility
       with_media: With media
     strikes:
       actions:
@@ -1176,9 +1131,6 @@ en:
         hint: This filter applies to select individual posts regardless of other criteria. You can add more posts to this filter from the web interface.
         title: Filtered posts
   footer:
-    developers: Developers
-    more: More…
-    resources: Resources
     trending_now: Trending now
   generic:
     all: All
@@ -1221,7 +1173,6 @@ en:
       following: Following list
       muting: Muting list
     upload: Upload
-  in_memoriam_html: In Memoriam.
   invites:
     delete: Deactivate
     expired: Expired
@@ -1300,6 +1251,8 @@ en:
     carry_blocks_over_text: This user moved from %{acct}, which you had blocked.
     carry_mutes_over_text: This user moved from %{acct}, which you had muted.
     copy_account_note_text: 'This user moved from %{acct}, here were your previous notes about them:'
+  navigation:
+    toggle_menu: Toggle menu
   notification_mailer:
     admin:
       report:
@@ -1402,22 +1355,7 @@ en:
     remove_selected_follows: Unfollow selected users
     status: Account status
   remote_follow:
-    acct: Enter your username@domain you want to act from
     missing_resource: Could not find the required redirect URL for your account
-    no_account_html: Don't have an account? You can <a href='%{sign_up_path}' target='_blank'>sign up here</a>
-    proceed: Proceed to follow
-    prompt: 'You are going to follow:'
-    reason_html: "<strong>Why is this step necessary?</strong> <code>%{instance}</code> might not be the server where you are registered, so we need to redirect you to your home server first."
-  remote_interaction:
-    favourite:
-      proceed: Proceed to favourite
-      prompt: 'You want to favourite this post:'
-    reblog:
-      proceed: Proceed to boost
-      prompt: 'You want to boost this post:'
-    reply:
-      proceed: Proceed to reply
-      prompt: 'You want to reply to this post:'
   reports:
     errors:
       invalid_rules: does not reference valid rules

@@ -270,7 +270,9 @@ class Header extends ImmutablePureComponent {
     const content         = { __html: account.get('note_emojified') };
     const displayNameHtml = { __html: account.get('display_name_html') };
     const fields          = account.get('fields');
-    const acct            = account.get('acct').indexOf('@') === -1 && domain ? `${account.get('acct')}@${domain}` : account.get('acct');
+    const isLocal         = account.get('acct').indexOf('@') === -1;
+    const acct            = isLocal && domain ? `${account.get('acct')}@${domain}` : account.get('acct');
+    const isIndexable     = !account.get('noindex');
 
     let badge;
 
@@ -324,25 +326,26 @@ class Header extends ImmutablePureComponent {
           {!(suspended || hidden) && (
             <div className='account__header__extra'>
               <div className='account__header__bio'>
-                {fields.size > 0 && (
-                  <div className='account__header__fields'>
-                    {fields.map((pair, i) => (
-                      <dl key={i}>
-                        <dt dangerouslySetInnerHTML={{ __html: pair.get('name_emojified') }} title={pair.get('name')} className='translate' />
-
-                        <dd className={`${pair.get('verified_at') ? 'verified' : ''} translate`} title={pair.get('value_plain')}>
-                          {pair.get('verified_at') && <span title={intl.formatMessage(messages.linkVerifiedOn, { date: intl.formatDate(pair.get('verified_at'), dateFormatOptions) })}><Icon id='check' className='verified__mark' /></span>} <span dangerouslySetInnerHTML={{ __html: pair.get('value_emojified') }} />
-                        </dd>
-                      </dl>
-                    ))}
-                  </div>
-                )}
-
                 {(account.get('id') !== me && signedIn) && <AccountNoteContainer account={account} />}
 
                 {account.get('note').length > 0 && account.get('note') !== '<p></p>' && <div className='account__header__content translate' dangerouslySetInnerHTML={content} />}
 
-                <div className='account__header__joined'><FormattedMessage id='account.joined' defaultMessage='Joined {date}' values={{ date: intl.formatDate(account.get('created_at'), { year: 'numeric', month: 'short', day: '2-digit' }) }} /></div>
+                <div className='account__header__fields'>
+                  <dl>
+                    <dt><FormattedMessage id='account.joined_short' defaultMessage='Joined' /></dt>
+                    <dd>{intl.formatDate(account.get('created_at'), { year: 'numeric', month: 'short', day: '2-digit' })}</dd>
+                  </dl>
+
+                  {fields.map((pair, i) => (
+                    <dl key={i} className={classNames({ verified: pair.get('verified_at') })}>
+                      <dt dangerouslySetInnerHTML={{ __html: pair.get('name_emojified') }} title={pair.get('name')} className='translate' />
+
+                      <dd className='translate' title={pair.get('value_plain')}>
+                        {pair.get('verified_at') && <span title={intl.formatMessage(messages.linkVerifiedOn, { date: intl.formatDate(pair.get('verified_at'), dateFormatOptions) })}><Icon id='check' className='verified__mark' /></span>} <span dangerouslySetInnerHTML={{ __html: pair.get('value_emojified') }} />
+                      </dd>
+                    </dl>
+                  ))}
+                </div>
               </div>
 
               <div className='account__header__extra__links'>
@@ -373,6 +376,7 @@ class Header extends ImmutablePureComponent {
 
         <Helmet>
           <title>{titleFromAccount(account)}</title>
+          <meta name='robots' content={(isLocal && isIndexable) ? 'all' : 'noindex'} />
         </Helmet>
       </div>
     );

@@ -35,13 +35,13 @@ class FeaturedTags extends ImmutablePureComponent {
       <div className='getting-started__trends'>
         <h4><FormattedMessage id='account.featured_tags.title' defaultMessage="{name}'s featured hashtags" values={{ name: <bdi dangerouslySetInnerHTML={{ __html: account.get('display_name_html') }} /> }} /></h4>
 
-        {featuredTags.map(featuredTag => (
+        {featuredTags.take(3).map(featuredTag => (
           <Hashtag
             key={featuredTag.get('name')}
             name={featuredTag.get('name')}
             href={featuredTag.get('url')}
             to={`/@${account.get('acct')}/tagged/${featuredTag.get('name')}`}
-            uses={featuredTag.get('statuses_count')}
+            uses={featuredTag.get('statuses_count') * 1}
             withGraph={false}
             description={((featuredTag.get('statuses_count') * 1) > 0) ? intl.formatMessage(messages.lastStatusAt, { date: intl.formatDate(featuredTag.get('last_status_at'), { month: 'short', day: '2-digit' }) }) : intl.formatMessage(messages.empty)}
           />
