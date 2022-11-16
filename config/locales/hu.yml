@@ -283,6 +283,7 @@ hu:
         update_ip_block_html: "%{name} módosította a(z) %{target} IP-címre vonatkozó szabályt"
         update_status_html: "%{name} frissítette %{target} felhasználó bejegyzését"
         update_user_role_html: "%{name} módosította a(z) %{target} szerepkört"
+      deleted_account: törölt fiók
       empty: Nem található napló.
       filter_by_action: Szűrés művelet alapján
       filter_by_user: Szűrés felhasználó alapján
@@ -607,7 +608,7 @@ hu:
         other: "%{count} felhasználó"
       categories:
         administration: Adminisztráció
-        devops: Devops
+        devops: DevOps
         invites: Meghívások
         moderation: Moderáció
         special: Speciális
@@ -658,7 +659,7 @@ hu:
         view_audit_log_description: Lehetővé teszi, hogy a felhasználó megtekintse a kiszolgáló adminisztratív eseményeinek történetét
         view_dashboard: Irányítópult megtekintése
         view_dashboard_description: Lehetővé teszi, hogy a felhasználó elérje az irányítópultot és vele számos metrikát
-        view_devops: Devops
+        view_devops: DevOps
         view_devops_description: Lehetővé teszi, hogy a felhasználó elérje a Sidekiq és pgHero irányítópultjait
       title: Szerepek
     rules:
@@ -1372,7 +1373,7 @@ hu:
     browser: Böngésző
     browsers:
       alipay: Alipay
-      blackberry: Blackberry
+      blackberry: BlackBerry
       chrome: Chrome
       edge: Microsoft Edge
       electron: Electron
@@ -1386,7 +1387,7 @@ hu:
       phantom_js: PhantomJS
       qq: QQ Browser
       safari: Safari
-      uc_browser: UCBrowser
+      uc_browser: UC Browser
       weibo: Weibo
     current_session: Jelenlegi munkamenet
     description: "%{browser} az alábbi platformon: %{platform}"
@@ -1395,7 +1396,7 @@ hu:
     platforms:
       adobe_air: Adobe Air
       android: Android
-      blackberry: Blackberry
+      blackberry: BlackBerry
       chrome_os: ChromeOS
       firefox_os: Firefox OS
       ios: iOS
